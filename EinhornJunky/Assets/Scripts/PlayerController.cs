@@ -16,17 +16,17 @@ public class PlayerController : MonoBehaviour {
     EinhornPhysic p = gameObject.GetComponent<EinhornPhysic>();
     Vector2 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
-      if (Input.GetKey(KeyCode.A))
-      {
-        p.VX = -WalkSpeed;
-        transform.GetChild(0).GetComponent<Animator>().Flip = false;
+    if (Input.GetKey(KeyCode.A))
+    {
+      p.VX = -WalkSpeed;
+      transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
     }
     else if (Input.GetKey(KeyCode.D))
-      {
-        p.VX = WalkSpeed;
-        transform.GetChild(0).GetComponent<Animator>().Flip = true;
-      }
-      else p.VX = 0;
+    {
+      p.VX = WalkSpeed;
+      transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+    }
+    else p.VX = 0;
 
     if (p.IsGrounded)
     {
