@@ -14,5 +14,6 @@ public class Candy : MonoBehaviour {
     GameObject g = gameObject.transform.GetChild(0).gameObject;
 
     g.transform.localPosition = new Vector2(0,Mathf.Sin(Time.time)*0.2f);
-	}
+    //https://forum.unity.com/threads/2d-pixel-art-particles-tutorial.361315/
+  }
 }
