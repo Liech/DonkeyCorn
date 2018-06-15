@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61985849754381452}
   - component: {fileID: 114487192206884110}
   m_Layer: 8
-  m_Name: CandyPrefab
+  m_Name: FloatingCandy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
