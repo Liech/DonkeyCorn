@@ -16,7 +16,7 @@ public class NoBackCam : MonoBehaviour {
   {
     GameObject p = GameObject.Find("Player");
     if (p == null) return;
-    Vector3 pos = Camera.main.transform.position + new Vector3(p.transform.position.x - Camera.main.transform.position.x, p.transform.position.y, 0);
+    Vector3 pos = Camera.main.transform.position + new Vector3(p.transform.position.x - Camera.main.transform.position.x, p.transform.position.y - Camera.main.transform.position.y, 0);
     if (pos.x < Camera.main.transform.position.x && !CanGoBack)
       pos.x = Camera.main.transform.position.x;
     if (pos.y < yCamStart)

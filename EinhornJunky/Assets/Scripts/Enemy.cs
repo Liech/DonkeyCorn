@@ -68,6 +68,16 @@ public class Enemy : MonoBehaviour {
           g.GetComponent<PlayerController>().Stun();
         }
     }
-    if (side.CollideFromTop && KillableByJump && sugar != SugarStatus.Depri) Destroy(gameObject);
+    if (side.CollideFromTop && KillableByJump && sugar != SugarStatus.Depri)
+      Destroy(gameObject);
+    else
+    {
+      foreach (GameObject g in side.colFromLeft)
+        if (g.tag == "Player")
+        {
+          g.GetComponent<Rigidbody2D>().velocity = new Vector3(BounceForce, BounceForce);
+          g.GetComponent<PlayerController>().Stun();
+        }
+    }
   }
 }
