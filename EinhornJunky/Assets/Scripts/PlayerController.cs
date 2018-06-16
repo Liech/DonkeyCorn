@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour {
   public float Overdrive_JumpForce = 30;
 
   public float StunDuration = 0.5f;
+  public float WalkTimeForHighJump = 0.5f;
+  public float HighJumpFactor = 1.2f;
 
   private float StunnedUntil = 0;
+  private float WalkSince = 0;
 
   // Use this for initialization
   void Start () {
@@ -47,13 +50,16 @@ public class PlayerController : MonoBehaviour {
 
   float getJumpForce()
   {
+    float factor = 1;
+    if (WalkSince != 0 && WalkTimeForHighJump < Time.time- WalkSince)
+      factor = HighJumpFactor;
     SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
     if (sugar == SugarStatus.Depri)
-      return Depri_JumpForce;
+      return Depri_JumpForce*factor;
     else if (sugar == SugarStatus.Wach)
-      return Wach_JumpForce;
+      return Wach_JumpForce * factor;
     else if (sugar == SugarStatus.Overdrive)
-      return Overdrive_JumpForce;
+      return Overdrive_JumpForce * factor;
     return 0;
   }
 
@@ -89,22 +95,27 @@ public class PlayerController : MonoBehaviour {
         transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
         p.VX = -getWalkSpeed();
         transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+        if (WalkSince == 0) WalkSince = Time.time;
       }
       else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
       {
         transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
         p.VX = getWalkSpeed();
         transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+        if (WalkSince == 0) WalkSince = Time.time;
       }
       else
       {
         p.VX = 0;
         transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 0);
+        WalkSince = 0;
       }
       if (p.IsGrounded)
       {
         if (Input.GetKey(KeyCode.Space) || sugar == SugarStatus.Overdrive)
+        {
           p.VY = getJumpForce();
+        }
         if (Input.GetKey(KeyCode.Space) && sugar == SugarStatus.Depri)
           transform.GetChild(0).GetComponent<Animator>().SetTrigger("eating");
       }
