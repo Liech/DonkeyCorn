@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour {
   public float WachSpeed;
   public float OverdriveSpeed;
   public float BounceForce = 20;
+  public bool SugarRushOnCollision;
+  public GameObject Leiche;
 
   private Rigidbody2D body;
   private SpriteRenderer rnd;
@@ -54,30 +56,48 @@ public class Enemy : MonoBehaviour {
       WalkDirection = Direction.Right;
       foreach(GameObject g in side.colFromLeft)
         if (g.tag == "Player")
-        {
-          g.GetComponent<Rigidbody2D>().velocity = new Vector3(-BounceForce, BounceForce);
-          g.GetComponent<PlayerController>().Stun();
-        }
+          Collide(g);
     }
     if (side.CollideFromRight) {
       WalkDirection = Direction.Left;
       foreach (GameObject g in side.colFromLeft)
         if (g.tag == "Player")
-        {
-          g.GetComponent<Rigidbody2D>().velocity = new Vector3(BounceForce, BounceForce);
-          g.GetComponent<PlayerController>().Stun();
-        }
+          Collide(g);
     }
     if (side.CollideFromTop && KillableByJump && sugar != SugarStatus.Depri)
-      Destroy(gameObject);
+    {
+      Kill(side.colFromTop);
+    }
     else
     {
       foreach (GameObject g in side.colFromLeft)
-        if (g.tag == "Player")
-        {
-          g.GetComponent<Rigidbody2D>().velocity = new Vector3(BounceForce, BounceForce);
-          g.GetComponent<PlayerController>().Stun();
-        }
+        Collide(g);
+    }
+  }
+
+  public void Kill(HashSet<GameObject> killer)
+  {
+    foreach (GameObject fg in killer)
+      if (fg.tag == "Player")
+        fg.GetComponent<Rigidbody2D>().velocity = new Vector2(fg.GetComponent<Rigidbody2D>().velocity.x, 15);
+    GameObject g = Instantiate(Leiche);
+    g.transform.position = transform.position;
+    Destroy(gameObject);
+  }
+
+
+  public void Collide(GameObject g)
+  {
+    if (g.tag == "Player")
+    {
+      g.GetComponent<Rigidbody2D>().velocity = new Vector3(BounceForce, BounceForce);
+      g.GetComponent<PlayerController>().Stun();
+      if (SugarRushOnCollision)
+        if (GameObject.Find("Canvas/Player").GetComponent<SugarLevel>().CurrentLevel < 2)
+          GameObject.Find("Canvas/Player").GetComponent<SugarLevel>().CurrentLevel = 2.5f;
+        else
+          GameObject.Find("Canvas/Player").GetComponent<SugarLevel>().CurrentLevel = 3.5f; //tot
+
     }
   }
 }
