@@ -70,6 +70,7 @@ public class CollisionSide : MonoBehaviour {
     leftObject = new GameObject();
     leftObject.name = "Left";
     leftObject.AddComponent<BoxCollider2D>();
+    leftObject.layer = gameObject.layer;
     BoxCollider2D lCol = leftObject.GetComponent<BoxCollider2D>();
     lCol.offset = col.offset + new Vector2(-col.size.x / 2 + 0.1f, 0);
     lCol.size = new Vector2(0.1f, col.size.y * 0.8f);
@@ -83,6 +84,7 @@ public class CollisionSide : MonoBehaviour {
     rightObject = new GameObject();
     rightObject.name = "Right";
     rightObject.AddComponent<BoxCollider2D>();
+    rightObject.layer = gameObject.layer;
     BoxCollider2D rCol = rightObject.GetComponent<BoxCollider2D>();
     rCol.offset = col.offset + new Vector2(col.size.x / 2 - 0.1f, 0);
     rCol.size = new Vector2(0.1f, col.size.y * 0.8f);
@@ -96,6 +98,7 @@ public class CollisionSide : MonoBehaviour {
     topObject = new GameObject();
     topObject.name = "Top";
     topObject.AddComponent<BoxCollider2D>();
+    topObject.layer = gameObject.layer;
     BoxCollider2D tCol = topObject.GetComponent<BoxCollider2D>();
     tCol.offset = col.offset + new Vector2(0, col.size.y / 2 + 0.1f);
     tCol.size = new Vector2(col.size.x * 0.8f, 0.1f);
@@ -108,6 +111,7 @@ public class CollisionSide : MonoBehaviour {
     bottomObject = new GameObject();
     bottomObject.name = "Bot";
     bottomObject.AddComponent<BoxCollider2D>();
+    bottomObject.layer = gameObject.layer;
     BoxCollider2D bCol = bottomObject.GetComponent<BoxCollider2D>();
     bCol.offset = col.offset + new Vector2(0, -col.size.y / 2 + 0.1f);
     bCol.size = new Vector2(col.size.x * 0.8f, 0.1f);

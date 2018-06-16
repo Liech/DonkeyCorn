@@ -20,6 +20,7 @@ public class SugarLevelDependent : MonoBehaviour {
   void OnDestroy()
   {
     GameObject g = GameObject.Find("Canvas/SugarLevel");
+    if (g == null) return;
     g.GetComponent<SugarLevel>().Unregister(this);
   }
 }
