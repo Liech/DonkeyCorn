@@ -6,6 +6,7 @@ public class SugarLevelDependent : MonoBehaviour {
 
   public void Start()
   {
+    CurrentLevel = SugarStatus.Depri;
     GameObject g = GameObject.Find("Canvas/SugarLevel");
     g.GetComponent<SugarLevel>().Register(this);
   }
