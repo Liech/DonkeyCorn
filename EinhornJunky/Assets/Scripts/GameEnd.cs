@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameEnd : MonoBehaviour {
 
@@ -13,7 +14,11 @@ public class GameEnd : MonoBehaviour {
     {
       GameObject Player = GameObject.Find("Player");
       if (Player == null) return;
-      if (Player.transform.position.x > transform.position.x) won = true;
+      if (Player.transform.position.x > transform.position.x)
+      {
+        GameObject.Find("Canvas/WinScreen").GetComponent<Image>().enabled = true;
+        won = true;
+      }
     }
 
     if (won) Debug.Log("Sieg");

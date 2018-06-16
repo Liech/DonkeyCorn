@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum SugarStatus
 {
@@ -44,10 +45,13 @@ public class SugarLevel : MonoBehaviour {
     if (Status == SugarStatus.Depri) { CurrentLevel -= Depri_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Depri); }
     if (Status == SugarStatus.Wach) { CurrentLevel -= Wach_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Wach); }
     if (Status == SugarStatus.Overdrive) { CurrentLevel -= Overdrive_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Overdrive); }
-    if (GameObject.Find("Player") != null)
+    GameObject plr = GameObject.Find("Player");
+    if (plr != null)
     {
-      if (CurrentLevel < 0) Destroy(GameObject.Find("Player").gameObject);
-      if (CurrentLevel > 3) Destroy(GameObject.Find("Player").gameObject);
+      if (CurrentLevel < 0 || CurrentLevel > 3|| plr.transform.position.y < GameObject.Find("Abgrund").transform.position.y) {
+        Destroy(plr.gameObject);
+        GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled = true;
+      }
     }
     GetComponent<ShowLife>().CurrentDamage = CurrentLevel * GetComponent<ShowLife>().MaxLife / 3.0f;
   }
