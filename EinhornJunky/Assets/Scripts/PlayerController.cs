@@ -119,8 +119,20 @@ public class PlayerController : MonoBehaviour {
     get{ return Time.time < StunnedUntil; }
   }
 
+  float oldTime = 0;
   public void Stun()
   {
+    if (StunnedUntil > Time.time) return;
     StunnedUntil = Time.time + StunDuration;
+    
+    //gameObject.AddComponent<ActionEffect>();
+    //Debug.Log("Hit");
+    //Time.timeScale = 0.00001f;
+    //Color old = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color;
+    //transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+    //yield WaitForSeconds(.5);
+    //transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = old;
+    //Time.timeScale = oldTime;
   }
+
 }

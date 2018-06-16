@@ -23,11 +23,7 @@ GameObject:
   - component: {fileID: 50874413082441898}
   - component: {fileID: 114753388528010168}
   - component: {fileID: 114583721903090132}
-  - component: {fileID: 114837123705329366}
-  - component: {fileID: 114089298237393930}
-  - component: {fileID: 114006721429333358}
   - component: {fileID: 114652698670901542}
-  - component: {fileID: 114025607075830706}
   m_Layer: 11
   m_Name: Enemy
   m_TagString: Enemy
@@ -142,39 +138,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114006721429333358
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108357165787784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b6553e645571341abea66a0beaef6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114025607075830706
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108357165787784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b6553e645571341abea66a0beaef6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114089298237393930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108357165787784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4809d41b648a8c45bb7a3596a834ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114583721903090132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,17 +180,6 @@ MonoBehaviour:
   BounceForce: 20
   SugarRushOnCollision: 0
   Leiche: {fileID: 0}
---- !u!114 &114837123705329366
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108357165787784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4809d41b648a8c45bb7a3596a834ff0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212198424273817166
 SpriteRenderer:
   m_ObjectHideFlags: 1

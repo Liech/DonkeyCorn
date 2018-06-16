@@ -91,7 +91,7 @@ public class Enemy : MonoBehaviour {
   {
     if (g.tag == "Player")
     {
-      g.GetComponent<Rigidbody2D>().velocity = new Vector3(BounceForce, BounceForce);
+      g.GetComponent<Rigidbody2D>().velocity = new Vector3(g.transform.position.x < transform.position.x?-BounceForce: BounceForce, BounceForce);
       g.GetComponent<PlayerController>().Stun();
       if (SugarRushOnCollision)
         if (GameObject.Find("Canvas/Player").GetComponent<SugarLevel>().CurrentLevel < 2)
