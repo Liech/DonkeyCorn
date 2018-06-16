@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Candy
   - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
