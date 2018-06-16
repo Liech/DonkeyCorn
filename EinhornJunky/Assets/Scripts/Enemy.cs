@@ -88,6 +88,8 @@ public class Enemy : MonoBehaviour {
     {
       foreach (GameObject g in side.colFromLeft)
         Collide(g);
+      foreach (GameObject g in side.colFromRight)
+        Collide(g);
     }
 
   }
