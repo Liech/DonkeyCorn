@@ -14,11 +14,11 @@ public class CollisionList : MonoBehaviour
     // Add the GameObject collided with to the list.
     currentCollisions.Add(col.gameObject);
 
-    // Print the entire list to the console.
-    foreach (GameObject gObject in currentCollisions)
-    {
-      print(gObject.name);
-    }
+    //// Print the entire list to the console.
+    //foreach (GameObject gObject in currentCollisions)
+    //{
+    //  print(gObject.name);
+    //}
   }
 
   void OnCollisionExit2D(Collision2D col)
@@ -27,10 +27,10 @@ public class CollisionList : MonoBehaviour
     // Remove the GameObject collided with from the list.
     currentCollisions.Remove(col.gameObject);
 
-    // Print the entire list to the console.
-    foreach (GameObject gObject in currentCollisions)
-    {
-      print(gObject.name);
-    }
+    //// Print the entire list to the console.
+    //foreach (GameObject gObject in currentCollisions)
+    //{
+    //  print(gObject.name);
+    //}
   }
 }
