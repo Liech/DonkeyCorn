@@ -598,11 +598,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4315272101727884, guid: 397cde81d61b9244dbd1695f22a6b7bb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.6852584
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 4315272101727884, guid: 397cde81d61b9244dbd1695f22a6b7bb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.3545408
+      value: -5.36
       objectReference: {fileID: 0}
     - target: {fileID: 4315272101727884, guid: 397cde81d61b9244dbd1695f22a6b7bb, type: 2}
       propertyPath: m_LocalPosition.z
@@ -632,6 +632,21 @@ Prefab:
         type: 2}
       propertyPath: fadeOutTime
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114023505417494582, guid: 397cde81d61b9244dbd1695f22a6b7bb,
+        type: 2}
+      propertyPath: MovesLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114023505417494582, guid: 397cde81d61b9244dbd1695f22a6b7bb,
+        type: 2}
+      propertyPath: MovesRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114023505417494582, guid: 397cde81d61b9244dbd1695f22a6b7bb,
+        type: 2}
+      propertyPath: FadesOnCollision
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 397cde81d61b9244dbd1695f22a6b7bb, type: 2}
@@ -1895,11 +1910,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4506036067765144, guid: 225b6cfc2722a6b448ee7220dd8a6a11, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -19.7
+      value: -24.17
       objectReference: {fileID: 0}
     - target: {fileID: 4506036067765144, guid: 225b6cfc2722a6b448ee7220dd8a6a11, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7.33
+      value: -6.88
       objectReference: {fileID: 0}
     - target: {fileID: 4506036067765144, guid: 225b6cfc2722a6b448ee7220dd8a6a11, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1998,6 +2013,11 @@ Prefab:
     - target: {fileID: 1056492335563764, guid: 225b6cfc2722a6b448ee7220dd8a6a11, type: 2}
       propertyPath: m_Name
       value: FloatingCandy (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114487192206884110, guid: 225b6cfc2722a6b448ee7220dd8a6a11,
+        type: 2}
+      propertyPath: SugarBoost
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 225b6cfc2722a6b448ee7220dd8a6a11, type: 2}
