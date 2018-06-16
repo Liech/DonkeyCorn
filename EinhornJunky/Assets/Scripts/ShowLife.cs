@@ -20,6 +20,7 @@ public class ShowLife : MonoBehaviour {
     //CurrentDamage++;
     //CurrentDamage = CurrentDamage % MaxLife;
     int Index = (int)(10.0f * ((float)CurrentDamage / (float)MaxLife));
+    if (Index < 0 || Index > Lifes.Count - 1) return;
     gameObject.GetComponent<Image>().sprite = Lifes[Index];
 	}
 }

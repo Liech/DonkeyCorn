@@ -36,7 +36,7 @@ public class SugarLevel : MonoBehaviour {
 
   // Use this for initialization
   void Start () {
-    CurrentLevel = 0.5f;
+    
 	}
 	
 	// Update is called once per frame

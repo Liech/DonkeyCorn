@@ -90,6 +90,8 @@ public class PlayerController : MonoBehaviour {
     {
       if (Input.GetKey(KeyCode.Space) || sugar == SugarStatus.Overdrive)
         p.VY = getJumpForce();
+      if (Input.GetKey(KeyCode.Space) && sugar == SugarStatus.Depri)
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("eating");
     }
 
     //if (p.VY <= 0)
