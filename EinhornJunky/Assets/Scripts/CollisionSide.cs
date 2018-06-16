@@ -8,10 +8,10 @@ public class CollisionSide : MonoBehaviour {
   public bool CollideFromRight { get { return colFromRight.Count > 0; } }
   public bool CollideFromBottom { get { return colFromBottom.Count > 0; } }
 
-  private HashSet<GameObject> colFromLeft;
-  private HashSet<GameObject> colFromTop;
-  private HashSet<GameObject> colFromRight;
-  private HashSet<GameObject> colFromBottom;
+  public HashSet<GameObject> colFromLeft;
+  public HashSet<GameObject> colFromTop;
+  public HashSet<GameObject> colFromRight;
+  public HashSet<GameObject> colFromBottom;
 
   private GameObject leftObject;
   private GameObject rightObject;

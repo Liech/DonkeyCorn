@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour {
   public float Overdrive_WalkSpeed = 10;
   public float Overdrive_JumpForce = 30;
 
+  public float StunDuration = 0.5f;
+
+  private float StunnedUntil = 0;
+
   // Use this for initialization
   void Start () {
     
@@ -78,29 +82,45 @@ public class PlayerController : MonoBehaviour {
 
     SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
 
-
-		if (Input.GetKey (KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-			transform.GetChild(0).GetComponent<Animator> ().SetFloat ("Speed", 1);
-			p.VX = -getWalkSpeed ();
-			transform.GetChild (0).GetComponent<SpriteRenderer> ().flipX = false;
-		} else if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow)) {
-			transform.GetChild(0).GetComponent<Animator> ().SetFloat ("Speed", 1);
-			p.VX = getWalkSpeed ();
-			transform.GetChild (0).GetComponent<SpriteRenderer> ().flipX = true;
-		} else {
-			p.VX = 0;
-			transform.GetChild(0).GetComponent<Animator> ().SetFloat ("Speed",0);
-		}
-    if (p.IsGrounded)
+    if (!IsStunned)
     {
-      if (Input.GetKey(KeyCode.Space) || sugar == SugarStatus.Overdrive)
-        p.VY = getJumpForce();
-      if (Input.GetKey(KeyCode.Space) && sugar == SugarStatus.Depri)
-        transform.GetChild(0).GetComponent<Animator>().SetTrigger("eating");
+      if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+      {
+        transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
+        p.VX = -getWalkSpeed();
+        transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+      }
+      else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+      {
+        transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
+        p.VX = getWalkSpeed();
+        transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+      }
+      else
+      {
+        p.VX = 0;
+        transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 0);
+      }
+      if (p.IsGrounded)
+      {
+        if (Input.GetKey(KeyCode.Space) || sugar == SugarStatus.Overdrive)
+          p.VY = getJumpForce();
+        if (Input.GetKey(KeyCode.Space) && sugar == SugarStatus.Depri)
+          transform.GetChild(0).GetComponent<Animator>().SetTrigger("eating");
+      }
     }
-
     //if (p.VY <= 0)
     //p.VY += -1f;
 
+  }
+
+  public bool IsStunned
+  {
+    get{ return Time.time < StunnedUntil; }
+  }
+
+  public void Stun()
+  {
+    StunnedUntil = Time.time + StunDuration;
   }
 }

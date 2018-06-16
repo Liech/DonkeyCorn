@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour {
   public float         DepriSpeed;
   public float WachSpeed;
   public float OverdriveSpeed;
+  public float BounceForce = 20;
 
   private Rigidbody2D body;
   private SpriteRenderer rnd;
@@ -49,8 +50,24 @@ public class Enemy : MonoBehaviour {
       rnd.flipX = true;
     }
 
-    if (side.CollideFromLeft) WalkDirection = Direction.Right;
-    if (side.CollideFromRight) WalkDirection = Direction.Left;
+    if (side.CollideFromLeft) {
+      WalkDirection = Direction.Right;
+      foreach(GameObject g in side.colFromLeft)
+        if (g.tag == "Player")
+        {
+          g.GetComponent<Rigidbody2D>().velocity = new Vector3(-BounceForce, BounceForce);
+          g.GetComponent<PlayerController>().Stun();
+        }
+    }
+    if (side.CollideFromRight) {
+      WalkDirection = Direction.Left;
+      foreach (GameObject g in side.colFromLeft)
+        if (g.tag == "Player")
+        {
+          g.GetComponent<Rigidbody2D>().velocity = new Vector3(BounceForce, BounceForce);
+          g.GetComponent<PlayerController>().Stun();
+        }
+    }
     if (side.CollideFromTop && KillableByJump && sugar != SugarStatus.Depri) Destroy(gameObject);
   }
 }
