@@ -74,18 +74,18 @@ public class PlayerController : MonoBehaviour {
     SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
 
 
-    if (Input.GetKey(KeyCode.A))
-    {
-      p.VX = -getWalkSpeed();
-      transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
-    }
-    else if (Input.GetKey(KeyCode.D))
-    {
-      p.VX = getWalkSpeed();
-      transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
-    }
-    else p.VX = 0;
-
+		if (Input.GetKey (KeyCode.A)) {
+			transform.GetChild(0).GetComponent<Animator> ().SetFloat ("Speed", 1);
+			p.VX = -getWalkSpeed ();
+			transform.GetChild (0).GetComponent<SpriteRenderer> ().flipX = false;
+		} else if (Input.GetKey (KeyCode.D)) {
+			transform.GetChild(0).GetComponent<Animator> ().SetFloat ("Speed", 1);
+			p.VX = getWalkSpeed ();
+			transform.GetChild (0).GetComponent<SpriteRenderer> ().flipX = true;
+		} else {
+			p.VX = 0;
+			transform.GetChild(0).GetComponent<Animator> ().SetFloat ("Speed",0);
+		}
     if (p.IsGrounded)
     {
       if (Input.GetKey(KeyCode.Space) || sugar == SugarStatus.Overdrive)
