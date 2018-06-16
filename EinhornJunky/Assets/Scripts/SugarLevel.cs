@@ -49,7 +49,7 @@ public class SugarLevel : MonoBehaviour {
     if (plr != null)
     {
       if (CurrentLevel < 0 || CurrentLevel > 3|| plr.transform.position.y < GameObject.Find("Abgrund").transform.position.y) {
-        Destroy(plr.gameObject);
+        plr.GetComponent<PlayerController>().Dead = true;
         GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled = true;
       }
     }

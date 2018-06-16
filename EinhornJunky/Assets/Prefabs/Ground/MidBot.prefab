@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114075847971519862}
   - component: {fileID: 114574474862505564}
   m_Layer: 10
-  m_Name: Ground
+  m_Name: MidBot
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1202485989208792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.56, y: -15.72, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.97656, y: 0.97656, z: 0.97656}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,18 +55,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.09542906, y: -0.12218857}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
-    newSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 4.2, y: 4.2}
+    newSize: {x: 4.2, y: 4.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 3.9957135, y: 4.049223}
   m_EdgeRadius: 0
 --- !u!114 &114075847971519862
 MonoBehaviour:
@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb94952bd5fd6c45aac3947e38b62b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Depri: {fileID: 21300000, guid: 771a9178c7a2dd341ba8f4865f6cac3a, type: 3}
-  Wach: {fileID: 21300000, guid: 146f5c96032b36d4bb71e57e86b9eb10, type: 3}
-  Overdrive: {fileID: 21300000, guid: 146f5c96032b36d4bb71e57e86b9eb10, type: 3}
+  Depri: {fileID: 21300000, guid: ddd9583dbd28e5a4b80fb2915dd3c64d, type: 3}
+  Wach: {fileID: 21300000, guid: c8cf9cbbb6ffb864a8c053420b08b392, type: 3}
+  Overdrive: {fileID: 21300000, guid: c8cf9cbbb6ffb864a8c053420b08b392, type: 3}
 --- !u!212 &212954144286853688
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -128,12 +128,12 @@ SpriteRenderer:
   m_SortingLayerID: 1747496591
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 771a9178c7a2dd341ba8f4865f6cac3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8cf9cbbb6ffb864a8c053420b08b392, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 4.2, y: 4.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

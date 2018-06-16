@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114583721903090132}
   - component: {fileID: 114652698670901542}
   m_Layer: 11
-  m_Name: Schwein
+  m_Name: Hundi
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

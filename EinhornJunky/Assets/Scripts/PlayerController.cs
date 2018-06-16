@@ -19,9 +19,11 @@ public class PlayerController : MonoBehaviour {
   private float StunnedUntil = 0;
   private float WalkSince = 0;
 
+  public bool Dead { get; set; }
+
   // Use this for initialization
   void Start () {
-    
+    Dead = false;
 	}
    
   void CandyCollected(GameObject g)
@@ -32,6 +34,11 @@ public class PlayerController : MonoBehaviour {
 
   // Update is called once per frame
   void Update () {
+    if (Dead)
+    {
+      transform.GetChild(0).GetComponent<Animator>().SetBool("Dying", true);
+      return;
+    }
     Movement();
     CollectCandy();
   }
