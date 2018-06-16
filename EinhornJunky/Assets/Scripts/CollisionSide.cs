@@ -66,14 +66,18 @@ public class CollisionSide : MonoBehaviour {
   // Use this for initialization
   void Start()
   {
+    float ColWidth = 0.6f;
+    float ColHeigthPerc = 0.6f;
+    float offset = 0.4f;
+
     col = gameObject.GetComponent<BoxCollider2D>();
     leftObject = new GameObject();
     leftObject.name = "Left";
     leftObject.AddComponent<BoxCollider2D>();
     leftObject.layer = gameObject.layer;
     BoxCollider2D lCol = leftObject.GetComponent<BoxCollider2D>();
-    lCol.offset = col.offset + new Vector2(-col.size.x / 2 + 0.1f, 0);
-    lCol.size = new Vector2(0.1f, col.size.y * 0.8f);
+    lCol.offset = col.offset + new Vector2(-col.size.x / 2 + offset, 0);
+    lCol.size = new Vector2(ColWidth, col.size.y * ColHeigthPerc);
     lCol.transform.parent = gameObject.transform;
     lCol.transform.localPosition = new Vector3(0, 0, 0);
     leftObject.AddComponent<CollisionDelegate>();
@@ -86,8 +90,8 @@ public class CollisionSide : MonoBehaviour {
     rightObject.AddComponent<BoxCollider2D>();
     rightObject.layer = gameObject.layer;
     BoxCollider2D rCol = rightObject.GetComponent<BoxCollider2D>();
-    rCol.offset = col.offset + new Vector2(col.size.x / 2 - 0.1f, 0);
-    rCol.size = new Vector2(0.1f, col.size.y * 0.8f);
+    rCol.offset = col.offset + new Vector2(col.size.x / 2 - offset, 0);
+    rCol.size = new Vector2(ColWidth, col.size.y * ColHeigthPerc);
     rCol.transform.parent = gameObject.transform;
     rCol.transform.localPosition = new Vector3(0, 0, 0);
     rightObject.AddComponent<CollisionDelegate>();
@@ -100,8 +104,8 @@ public class CollisionSide : MonoBehaviour {
     topObject.AddComponent<BoxCollider2D>();
     topObject.layer = gameObject.layer;
     BoxCollider2D tCol = topObject.GetComponent<BoxCollider2D>();
-    tCol.offset = col.offset + new Vector2(0, col.size.y / 2 + 0.1f);
-    tCol.size = new Vector2(col.size.x * 0.8f, 0.1f);
+    tCol.offset = col.offset + new Vector2(0, col.size.y / 2 - offset);
+    tCol.size = new Vector2(col.size.x * ColHeigthPerc, ColWidth);
     tCol.transform.parent = gameObject.transform;
     tCol.transform.localPosition = new Vector3(0, 0, 0);
     topObject.AddComponent<CollisionDelegate>();
@@ -113,8 +117,8 @@ public class CollisionSide : MonoBehaviour {
     bottomObject.AddComponent<BoxCollider2D>();
     bottomObject.layer = gameObject.layer;
     BoxCollider2D bCol = bottomObject.GetComponent<BoxCollider2D>();
-    bCol.offset = col.offset + new Vector2(0, -col.size.y / 2 + 0.1f);
-    bCol.size = new Vector2(col.size.x * 0.8f, 0.1f);
+    bCol.offset = col.offset + new Vector2(0, -col.size.y / 2 + offset);
+    bCol.size = new Vector2(col.size.x * ColHeigthPerc, ColWidth);
     bCol.transform.parent = gameObject.transform;
     bCol.transform.localPosition = new Vector3(0, 0, 0);
     rightObject.AddComponent<CollisionDelegate>();
