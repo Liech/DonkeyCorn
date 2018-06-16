@@ -42,6 +42,6 @@ public class Enemy : MonoBehaviour {
 
     if (side.CollideFromLeft) WalkDirection = Direction.Right;
     if (side.CollideFromRight) WalkDirection = Direction.Left;
-
+    if (side.CollideFromTop && KillableByJump) Destroy(gameObject);
   }
 }
