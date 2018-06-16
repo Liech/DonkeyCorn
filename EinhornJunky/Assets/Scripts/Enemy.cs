@@ -35,11 +35,20 @@ public class Enemy : MonoBehaviour {
     sugar = GetComponent<SugarLevelDependent>().CurrentLevel;    
     float WalkSpeed = 0;
     if (sugar == SugarStatus.Depri)
+    {
       WalkSpeed = DepriSpeed;
+      transform.GetChild(0).GetComponent<Animator>().SetBool("Sugar", false);
+    }
     else if (sugar == SugarStatus.Wach)
+    {
       WalkSpeed = WachSpeed;
+      transform.GetChild(0).GetComponent<Animator>().SetBool("Sugar", true);
+    }
     else if (sugar == SugarStatus.Overdrive)
+    {
       WalkSpeed = OverdriveSpeed;
+      transform.GetChild(0).GetComponent<Animator>().SetBool("Sugar", true);
+    }
 
     if (WalkDirection == Direction.Left)
     {
