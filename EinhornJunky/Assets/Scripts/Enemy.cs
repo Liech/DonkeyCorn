@@ -80,6 +80,7 @@ public class Enemy : MonoBehaviour {
     foreach (GameObject fg in killer)
       if (fg.tag == "Player")
         fg.GetComponent<Rigidbody2D>().velocity = new Vector2(fg.GetComponent<Rigidbody2D>().velocity.x, 15);
+    if (Leiche == null) return;
     GameObject g = Instantiate(Leiche);
     g.transform.position = transform.position;
     Destroy(gameObject);

@@ -23,7 +23,7 @@ public class Corn : MonoBehaviour {
     if (CanDrop)
     {
       if (Player.transform.position.y < transform.position.y && Player.transform.position.x < col.bounds.max.x
-        && Player.transform.position.x > col.bounds.min.x)
+        && Player.transform.position.x > col.bounds.min.x && !released)
       {
         gameObject.AddComponent<Rigidbody2D>();
         released = true;
