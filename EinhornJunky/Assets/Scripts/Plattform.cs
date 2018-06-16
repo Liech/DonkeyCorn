@@ -22,9 +22,16 @@ public class Plattform : MonoBehaviour {
   CollisionList col;
   SpriteRenderer rnd;
 
+  HashSet<GameObject> OnCloud;
+
   private float NextFadeStatusChange;
   private float StatusChangeStart;
   FadeOutStatus CurrentFadeStatus;
+
+  Plattform()
+  {
+    OnCloud = new HashSet<GameObject>();
+  }
 
   // Use this for initialization
   void Start () {
@@ -36,6 +43,25 @@ public class Plattform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+    if (CurrentFadeStatus == FadeOutStatus.Visible || CurrentFadeStatus == FadeOutStatus.FadeOut)
+    foreach (GameObject g in col.currentCollisions)
+    {
+        if (g.GetComponent<Rigidbody2D>() == null) return;
+        g.transform.parent = plt.transform;
+        OnCloud.Add(g);
+    }
+
+
+    HashSet<GameObject> copy_OnCLoud = new HashSet<GameObject>(OnCloud);
+    foreach(GameObject g in copy_OnCLoud)
+      if (CurrentFadeStatus == FadeOutStatus.Invisible || CurrentFadeStatus == FadeOutStatus.FadeOut||!col.currentCollisions.Contains(g))
+      {
+        OnCloud.Remove(g);
+        g.transform.parent = null;
+      }
+
+
     if (MovesRight)
     {
       plt.transform.localPosition = new Vector3(Mathf.Sin(Time.time * Speed) * MoveRange, plt.transform.localPosition.y);
