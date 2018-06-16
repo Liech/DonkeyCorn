@@ -200,10 +200,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Depri_WalkSpeed: 1
   Depri_JumpForce: 0
-  Wach_WalkSpeed: 8
+  Wach_WalkSpeed: 9
   Wach_JumpForce: 20
-  Overdrive_WalkSpeed: 16
-  Overdrive_JumpForce: 40
+  Overdrive_WalkSpeed: 30
+  Overdrive_JumpForce: 60
 --- !u!212 &212415915457815768
 SpriteRenderer:
   m_ObjectHideFlags: 1
