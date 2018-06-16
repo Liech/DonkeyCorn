@@ -50,6 +50,8 @@ public class Enemy : MonoBehaviour {
       transform.GetChild(0).GetComponent<Animator>().SetBool("Sugar", true);
     }
 
+
+
     if (WalkDirection == Direction.Left)
     {
       body.velocity = new Vector2(-WalkSpeed, body.velocity.y);
@@ -61,13 +63,18 @@ public class Enemy : MonoBehaviour {
       rnd.flipX = true;
     }
 
-    if (side.CollideFromLeft) {
+
+    BoxCollider2D r = GetComponent<BoxCollider2D>();
+    RaycastHit2D left = Physics2D.Raycast(new Vector2(r.bounds.min.x - 2, r.bounds.center.y), new Vector2(0, -1), 3f);
+    RaycastHit2D right = Physics2D.Raycast(new Vector2(r.bounds.max.x + 2, r.bounds.center.y), new Vector2(0, -1), 3f);
+
+    if (side.CollideFromLeft ||left.collider == null) {
       WalkDirection = Direction.Right;
       foreach(GameObject g in side.colFromLeft)
         if (g.tag == "Player")
           Collide(g);
     }
-    if (side.CollideFromRight) {
+    if (side.CollideFromRight || right.collider == null) {
       WalkDirection = Direction.Left;
       foreach (GameObject g in side.colFromLeft)
         if (g.tag == "Player")
@@ -82,6 +89,7 @@ public class Enemy : MonoBehaviour {
       foreach (GameObject g in side.colFromLeft)
         Collide(g);
     }
+
   }
 
   public void Kill(HashSet<GameObject> killer)
@@ -109,5 +117,14 @@ public class Enemy : MonoBehaviour {
           GameObject.Find("Canvas/Player").GetComponent<SugarLevel>().CurrentLevel = 3.5f; //tot
 
     }
+  }
+
+  public void OnDrawGizmos()
+  {
+    BoxCollider2D r = GetComponent<BoxCollider2D>();
+    RaycastHit2D left = Physics2D.Raycast(new Vector2(r.bounds.min.x - 2, r.bounds.center.y), new Vector2(0, -1), 3f);
+    RaycastHit2D right = Physics2D.Raycast(new Vector2(r.bounds.max.x + 2, r.bounds.center.y), new Vector2(0, -1), 3f);
+    Gizmos.DrawCube(left.point, new Vector3(0.1f, 0.1f, 0.1f));
+    Gizmos.DrawCube(right.point, new Vector3(0.1f, 0.1f, 0.1f));
   }
 }
