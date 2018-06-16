@@ -79,11 +79,11 @@ public class PlayerController : MonoBehaviour {
     SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
 
 
-		if (Input.GetKey (KeyCode.A)) {
+		if (Input.GetKey (KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
 			transform.GetChild(0).GetComponent<Animator> ().SetFloat ("Speed", 1);
 			p.VX = -getWalkSpeed ();
 			transform.GetChild (0).GetComponent<SpriteRenderer> ().flipX = false;
-		} else if (Input.GetKey (KeyCode.D)) {
+		} else if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow)) {
 			transform.GetChild(0).GetComponent<Animator> ().SetFloat ("Speed", 1);
 			p.VX = getWalkSpeed ();
 			transform.GetChild (0).GetComponent<SpriteRenderer> ().flipX = true;
