@@ -56,6 +56,11 @@ public class PlayerController : MonoBehaviour {
 
   public void CollectCandy()
   {
+    SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
+    if (sugar == SugarStatus.Depri)
+      if (!transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("eating"))
+        return;
+      
     CollisionList l = gameObject.GetComponent<CollisionList>();
     for(int i = 0;i < l.currentCollisions.Count;i++)
     {

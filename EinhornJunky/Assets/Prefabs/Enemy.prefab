@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkDirection: 0
   WalkOfCliffs: 0
-  KillableByJump: 0
+  KillableByJump: 1
   DepriSpeed: 1
   WachSpeed: 7
   OverdriveSpeed: 14
