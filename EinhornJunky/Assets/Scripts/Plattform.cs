@@ -69,11 +69,11 @@ public class Plattform : MonoBehaviour {
 
     if (MovesRight)
     {
-      plt.transform.localPosition = new Vector3(Mathf.Sin(t) * MoveRange, plt.transform.localPosition.y);
+      plt.transform.localPosition = new Vector3(Mathf.Sin(t) * MoveRange, snapBack ? t : plt.transform.localPosition.y);
     }
     if (MovesLeft)
     {
-      plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, Mathf.Cos(t) * MoveRange);
+      plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, snapBack?t: Mathf.Cos(t) * MoveRange);
     }
     if (FadesOnCollision && col.currentCollisions.Count > 0 && CurrentFadeStatus == FadeOutStatus.Visible)
     {
