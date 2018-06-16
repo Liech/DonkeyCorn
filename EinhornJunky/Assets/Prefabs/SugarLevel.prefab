@@ -44,17 +44,23 @@ MonoBehaviour:
   MaxLife: 100
   CurrentDamage: 0
   Lifes:
-  - {fileID: 21300000, guid: 4248ccbfd30a7e34bafad186f18f5d3b, type: 3}
-  - {fileID: 21300000, guid: 772e3bc7a38b3d945bd53894faa6f87b, type: 3}
-  - {fileID: 21300000, guid: e485ab42367f5a244bc678ff16a40cc5, type: 3}
-  - {fileID: 21300000, guid: 321f7278f86635c4badfd19d4e08d890, type: 3}
-  - {fileID: 21300000, guid: 3e3ee9bb309d01c46840831f561cbe24, type: 3}
-  - {fileID: 21300000, guid: 754420ccf1dd4394a99affc6ece68dba, type: 3}
-  - {fileID: 21300000, guid: e4b38ebd1d9e9494db06ec6135b86407, type: 3}
-  - {fileID: 21300000, guid: ccf6830ae6651da4e90fedc8f40496c5, type: 3}
-  - {fileID: 21300000, guid: 1f3932b41944226409f55b480aba6c6b, type: 3}
-  - {fileID: 21300000, guid: 34e73eb6a8af0f246b9630a70bfe3087, type: 3}
-  - {fileID: 21300000, guid: 4252988d05cf4504c98e507ef4668c1d, type: 3}
+  - {fileID: 21300000, guid: 6f432479a5465a740a17993961a56a7b, type: 3}
+  - {fileID: 21300000, guid: 7c449491804aba843b7ab810ccccfa3c, type: 3}
+  - {fileID: 21300000, guid: 2378593e93485d14b95ef0942e1c6945, type: 3}
+  - {fileID: 21300000, guid: 52bc03dedff43e44b92e832d44b01ea2, type: 3}
+  - {fileID: 21300000, guid: d0e6556fe30899d419280a1949b96a57, type: 3}
+  - {fileID: 21300000, guid: f0fdbbf4d03a38c43a0feb61a822ab7e, type: 3}
+  - {fileID: 21300000, guid: 0cf6209409e0c7747a8ff9ed31489d18, type: 3}
+  - {fileID: 21300000, guid: 49328bd39d515484384c94674daca0c7, type: 3}
+  - {fileID: 21300000, guid: 3b7dd36b842b9394dae933f32df930d8, type: 3}
+  - {fileID: 21300000, guid: 233c816873fc1524694137ca76e909a7, type: 3}
+  - {fileID: 21300000, guid: 9d875dbb06cbed94fadb60aeebfc7812, type: 3}
+  - {fileID: 21300000, guid: a50b8128997fa1744bd5b58af73ea69e, type: 3}
+  - {fileID: 21300000, guid: 6961c2e3984339f469bccc739a023137, type: 3}
+  - {fileID: 21300000, guid: 8b27a2fac6990f9449d90061cba6d879, type: 3}
+  - {fileID: 21300000, guid: 35434a46a2b998444b571c53873c2e35, type: 3}
+  - {fileID: 21300000, guid: d279213658d41f542b719f6f5c96c5f6, type: 3}
+  - {fileID: 21300000, guid: d321863a35568344ca1ce7cc407096c8, type: 3}
   YOffset: 3
 --- !u!114 &114771743537560404
 MonoBehaviour:
@@ -90,7 +96,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 4248ccbfd30a7e34bafad186f18f5d3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f432479a5465a740a17993961a56a7b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -119,6 +125,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78.900024, y: -7.700012}
-  m_SizeDelta: {x: 290, y: 285}
+  m_AnchoredPosition: {x: 85.43, y: -17.67}
+  m_SizeDelta: {x: 314.3, y: 816.46}
   m_Pivot: {x: 0.5, y: 0.5}

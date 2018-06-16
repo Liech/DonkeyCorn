@@ -39,8 +39,18 @@ public class PlayerController : MonoBehaviour {
       transform.GetChild(0).GetComponent<Animator>().SetBool("Dying", true);
       return;
     }
+
+    SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
+
+    if (sugar != SugarStatus.Depri)
+      transform.GetChild(0).GetComponent<Animator>().SetBool("Unicorn", true);
+    else
+      transform.GetChild(0).GetComponent<Animator>().SetBool("Unicorn", false);
+
     Movement();
     CollectCandy();
+
+
   }
 
   float getWalkSpeed()
@@ -137,7 +147,7 @@ public class PlayerController : MonoBehaviour {
     get{ return Time.time < StunnedUntil; }
   }
 
-  float oldTime = 0;
+  //float oldTime = 0;
   public void Stun()
   {
     if (StunnedUntil > Time.time) return;
