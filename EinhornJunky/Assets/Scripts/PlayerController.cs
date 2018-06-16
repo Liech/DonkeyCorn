@@ -95,6 +95,5 @@ public class PlayerController : MonoBehaviour {
     //if (p.VY <= 0)
     //p.VY += -1f;
 
-    Camera.main.transform.position = Camera.main.transform.position + new Vector3(transform.position.x - Camera.main.transform.position.x, 0, 0);
   }
 }
