@@ -10,12 +10,15 @@ public enum Direction
 public class Enemy : MonoBehaviour {
   public Direction     WalkDirection;
   public bool          WalkOfCliffs;
-  public float         WalkSpeed;
   public bool          KillableByJump;
+  public float         DepriSpeed;
+  public float WachSpeed;
+  public float OverdriveSpeed;
 
   private Rigidbody2D body;
   private SpriteRenderer rnd;
   private CollisionSide side;
+  private SugarStatus sugar;
 
 	// Use this for initialization
 	void Start () {
@@ -24,10 +27,16 @@ public class Enemy : MonoBehaviour {
     side = GetComponent<CollisionSide>();
 	}
 	
-
-
 	// Update is called once per frame
 	void Update () {
+    sugar = GetComponent<SugarLevelDependent>().CurrentLevel;    
+    float WalkSpeed = 0;
+    if (sugar == SugarStatus.Depri)
+      WalkSpeed = DepriSpeed;
+    else if (sugar == SugarStatus.Wach)
+      WalkSpeed = WachSpeed;
+    else if (sugar == SugarStatus.Overdrive)
+      WalkSpeed = OverdriveSpeed;
 
     if (WalkDirection == Direction.Left)
     {
@@ -42,6 +51,6 @@ public class Enemy : MonoBehaviour {
 
     if (side.CollideFromLeft) WalkDirection = Direction.Right;
     if (side.CollideFromRight) WalkDirection = Direction.Left;
-    if (side.CollideFromTop && KillableByJump) Destroy(gameObject);
+    if (side.CollideFromTop && KillableByJump && sugar != SugarStatus.Depri) Destroy(gameObject);
   }
 }

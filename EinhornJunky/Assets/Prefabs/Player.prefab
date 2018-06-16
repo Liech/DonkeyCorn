@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61479147076457760}
   - component: {fileID: 114392154500180608}
   - component: {fileID: 114642369645575826}
+  - component: {fileID: 114243405029412156}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -137,6 +138,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114243405029412156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001384367129234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b6553e645571341abea66a0beaef6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114392154500180608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,8 +172,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade204c54032eca4f93447232805fa3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 4
-  JumpForce: 24
+  Depri_WalkSpeed: 1
+  Depri_JumpForce: 0
+  Wach_WalkSpeed: 8
+  Wach_JumpForce: 20
+  Overdrive_WalkSpeed: 16
+  Overdrive_JumpForce: 40
 --- !u!212 &212430503530680752
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -195,7 +211,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1906077661
-  m_SortingLayer: 3
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 935b6b072785a3945b9a28daf3a4e5d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

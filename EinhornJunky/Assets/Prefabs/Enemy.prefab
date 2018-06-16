@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 61429128305513368}
   - component: {fileID: 50874413082441898}
   - component: {fileID: 114753388528010168}
+  - component: {fileID: 114583721903090132}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -91,7 +92,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61429128305513368
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -117,6 +118,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2709887, y: 1.9243565}
   m_EdgeRadius: 0
+--- !u!114 &114583721903090132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108357165787784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b6553e645571341abea66a0beaef6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114753388528010168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,6 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1013e6c7e07834f80296480af2f4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WalkDirection: 0
+  WalkOfCliffs: 0
+  KillableByJump: 0
+  DepriSpeed: 1
+  WachSpeed: 7
+  OverdriveSpeed: 14
 --- !u!212 &212198424273817166
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -161,7 +179,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 844375141
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2e5b70a0c50feb34b881c3bcf984106c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

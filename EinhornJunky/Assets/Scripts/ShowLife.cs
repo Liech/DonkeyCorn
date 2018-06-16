@@ -17,8 +17,8 @@ public class ShowLife : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    CurrentDamage++;
-    CurrentDamage = CurrentDamage % MaxLife;
+    //CurrentDamage++;
+    //CurrentDamage = CurrentDamage % MaxLife;
     int Index = (int)(10.0f * ((float)CurrentDamage / (float)MaxLife));
     gameObject.GetComponent<Image>().sprite = Lifes[Index];
 	}

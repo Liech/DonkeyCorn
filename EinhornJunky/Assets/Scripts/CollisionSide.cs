@@ -72,7 +72,7 @@ public class CollisionSide : MonoBehaviour {
     leftObject.AddComponent<BoxCollider2D>();
     BoxCollider2D lCol = leftObject.GetComponent<BoxCollider2D>();
     lCol.offset = col.offset + new Vector2(-col.size.x / 2 + 0.1f, 0);
-    lCol.size = new Vector2(0.1f, col.size.y * 0.9f);
+    lCol.size = new Vector2(0.1f, col.size.y * 0.8f);
     lCol.transform.parent = gameObject.transform;
     lCol.transform.localPosition = new Vector3(0, 0, 0);
     leftObject.AddComponent<CollisionDelegate>();
@@ -85,7 +85,7 @@ public class CollisionSide : MonoBehaviour {
     rightObject.AddComponent<BoxCollider2D>();
     BoxCollider2D rCol = rightObject.GetComponent<BoxCollider2D>();
     rCol.offset = col.offset + new Vector2(col.size.x / 2 - 0.1f, 0);
-    rCol.size = new Vector2(0.1f, col.size.y * 0.9f);
+    rCol.size = new Vector2(0.1f, col.size.y * 0.8f);
     rCol.transform.parent = gameObject.transform;
     rCol.transform.localPosition = new Vector3(0, 0, 0);
     rightObject.AddComponent<CollisionDelegate>();
@@ -98,7 +98,7 @@ public class CollisionSide : MonoBehaviour {
     topObject.AddComponent<BoxCollider2D>();
     BoxCollider2D tCol = topObject.GetComponent<BoxCollider2D>();
     tCol.offset = col.offset + new Vector2(0, col.size.y / 2 + 0.1f);
-    tCol.size = new Vector2(col.size.x * 0.9f, 0.1f);
+    tCol.size = new Vector2(col.size.x * 0.8f, 0.1f);
     tCol.transform.parent = gameObject.transform;
     tCol.transform.localPosition = new Vector3(0, 0, 0);
     topObject.AddComponent<CollisionDelegate>();
@@ -110,7 +110,7 @@ public class CollisionSide : MonoBehaviour {
     bottomObject.AddComponent<BoxCollider2D>();
     BoxCollider2D bCol = bottomObject.GetComponent<BoxCollider2D>();
     bCol.offset = col.offset + new Vector2(0, -col.size.y / 2 + 0.1f);
-    bCol.size = new Vector2(col.size.x * 0.9f, 0.1f);
+    bCol.size = new Vector2(col.size.x * 0.8f, 0.1f);
     bCol.transform.parent = gameObject.transform;
     bCol.transform.localPosition = new Vector3(0, 0, 0);
     rightObject.AddComponent<CollisionDelegate>();

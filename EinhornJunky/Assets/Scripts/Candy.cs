@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Candy : MonoBehaviour {
 
+  public float SugarBoost = 1f;
+
 	// Use this for initialization
 	void Start () {
 		
