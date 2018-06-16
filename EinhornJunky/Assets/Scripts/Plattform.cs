@@ -17,6 +17,8 @@ public class Plattform : MonoBehaviour {
   public float fadeOutTime = 1;
   public float fadedOutTime = 4;
   public float fadeInTime = 4;
+  public bool  snapBack=false;
+  public float snapBackModulo = 1.57f;
 
   GameObject plt;
   CollisionList col;
@@ -61,14 +63,17 @@ public class Plattform : MonoBehaviour {
         g.transform.parent = null;
       }
 
+    float t = Time.time * Speed;
+
+    if (snapBack) while (t > snapBackModulo) t -= snapBackModulo;
 
     if (MovesRight)
     {
-      plt.transform.localPosition = new Vector3(Mathf.Sin(Time.time * Speed) * MoveRange, plt.transform.localPosition.y);
+      plt.transform.localPosition = new Vector3(Mathf.Sin(t) * MoveRange, plt.transform.localPosition.y);
     }
     if (MovesLeft)
     {
-      plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, Mathf.Cos(Time.time * Speed) * MoveRange);
+      plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, Mathf.Cos(t) * MoveRange);
     }
     if (FadesOnCollision && col.currentCollisions.Count > 0 && CurrentFadeStatus == FadeOutStatus.Visible)
     {
