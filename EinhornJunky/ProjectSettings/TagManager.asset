@@ -47,6 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 1224815979
     locked: 0
+  - name: HalfBackgroudn
+    uniqueID: 1285322321
+    locked: 0
   - name: Ground
     uniqueID: 1747496591
     locked: 0
