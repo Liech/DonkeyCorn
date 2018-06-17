@@ -541,10 +541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b3f45c14cf9af4eba240297858d7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLevel: 2
-  Depri_DecreasePerSecond: 0.05
-  Wach_DecreasePerSecond: 0.05
-  Overdrive_DecreasePerSecond: 0.05
+  CurrentLevel: 1.5
+  Depri_DecreasePerSecond: 0.04
+  Wach_DecreasePerSecond: 0.07
+  Overdrive_DecreasePerSecond: 0.1
 --- !u!114 &114982762992404294
 MonoBehaviour:
   m_ObjectHideFlags: 1

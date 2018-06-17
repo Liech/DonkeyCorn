@@ -162,6 +162,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114549132155313582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,12 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade204c54032eca4f93447232805fa3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Depri_WalkSpeed: 1
+  Depri_WalkSpeed: 3
   Depri_JumpForce: 0
-  Wach_WalkSpeed: 9
+  Wach_WalkSpeed: 15
   Wach_JumpForce: 20
   Overdrive_WalkSpeed: 30
-  Overdrive_JumpForce: 60
+  Overdrive_JumpForce: 30
   StunDuration: 0.5
   WalkTimeForHighJump: 0.5
   HighJumpFactor: 1.2
