@@ -177,7 +177,7 @@ MonoBehaviour:
   DepriSpeed: 1
   WachSpeed: 7
   OverdriveSpeed: 14
-  BounceForce: 20
+  BounceForce: 100
   SugarRushOnCollision: 0
   Leiche: {fileID: 0}
 --- !u!212 &212198424273817166
