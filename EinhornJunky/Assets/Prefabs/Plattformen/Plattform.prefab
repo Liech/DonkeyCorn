@@ -36,6 +36,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4804054988406090}
   - component: {fileID: 212174985942614936}
+  - component: {fileID: 114744242811277286}
+  - component: {fileID: 114852277563342936}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -53,8 +55,6 @@ GameObject:
   - component: {fileID: 4179174928829344}
   - component: {fileID: 61998389506452354}
   - component: {fileID: 114835611225845466}
-  - component: {fileID: 114263698159140792}
-  - component: {fileID: 114181492776616062}
   m_Layer: 0
   m_Name: Moving Object
   m_TagString: Untagged
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1279414637069660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.26, y: -3.92, z: 11.114057}
+  m_LocalPosition: {x: -0.09, y: 0.58, z: 11.114057}
   m_LocalScale: {x: 2.2194977, y: 2.2195, z: 2.2195}
   m_Children:
   - {fileID: 4179174928829344}
@@ -139,22 +139,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaee35b00f82de04799f39fbde554b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovesRight: 0
-  MovesLeft: 1
-  FadesOnCollision: 1
+  MovesRight: 1
+  MovesLeft: 0
+  FadesOnCollision: 0
   Speed: 1
   MoveRange: 1
-  fadeOutTime: 1
+  fadeOutTime: 0.1
   fadedOutTime: 1
   fadeInTime: 1
   snapBack: 0
   snapBackModulo: 1.57
---- !u!114 &114181492776616062
+--- !u!114 &114744242811277286
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1752221477841900}
+  m_GameObject: {fileID: 1378707519473008}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fb94952bd5fd6c45aac3947e38b62b0, type: 3}
@@ -163,17 +163,6 @@ MonoBehaviour:
   Depri: {fileID: 21300000, guid: c9d0ef2c4b4e95b489bd543c447b47f7, type: 3}
   Wach: {fileID: 21300000, guid: 565620e9186f58442ade490705ca4a22, type: 3}
   Overdrive: {fileID: 21300000, guid: 565620e9186f58442ade490705ca4a22, type: 3}
---- !u!114 &114263698159140792
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1752221477841900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b6553e645571341abea66a0beaef6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114835611225845466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +175,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCollisions: []
+--- !u!114 &114852277563342936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1378707519473008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b6553e645571341abea66a0beaef6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212174985942614936
 SpriteRenderer:
   m_ObjectHideFlags: 1
