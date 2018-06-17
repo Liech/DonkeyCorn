@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Blue: 0
+    - _Blue: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -72,7 +72,7 @@ Material:
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Random: 0.41617602
+    - _Random: 0.14335419
     - _Range: 0.03
     - _Red: 1
     - _SmoothnessTextureChannel: 0
