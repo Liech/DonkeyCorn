@@ -5,7 +5,7 @@ using UnityEngine;
 public class Corn : MonoBehaviour {
   public bool CanDrop = true;
 
-  public float Gravity;
+  public float Gravity = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +26,7 @@ public class Corn : MonoBehaviour {
         && Player.transform.position.x > col.bounds.min.x && !released)
       {
         gameObject.AddComponent<Rigidbody2D>();
-        //gameObject.GetComponent<Rigidbody2D>().
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = Gravity;
         released = true;
       }
     }
