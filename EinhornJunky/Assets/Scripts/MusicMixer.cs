@@ -13,7 +13,7 @@ public class MusicMixer : MonoBehaviour {
 	void Update () {
     float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().CurrentLevel;
     AudioSource s = GetComponent<AudioSource>();
-    s.pitch = 0.5f + (lvl / 3.0f);
+    s.pitch = 0.7f + (lvl / 3.0f);
     if (lvl < FadeInStart)  s.volume = 0;
     else if (lvl > FadeOutEnd)  s.volume = 0;
     else if (lvl < FullVolume)
