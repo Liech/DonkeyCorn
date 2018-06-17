@@ -143,14 +143,14 @@ public class PlayerController : MonoBehaviour {
 
     if (!IsStunned)
     {
-      if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+      if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && !p.LeftCol)
       {
         transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
         p.VX = -getWalkSpeed();
         transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
         if (WalkSince == 0) WalkSince = Time.time;
       }
-      else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+      else if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && !p.RightCol)
       {
         transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
         p.VX = getWalkSpeed();

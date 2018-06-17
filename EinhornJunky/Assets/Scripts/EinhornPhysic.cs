@@ -40,17 +40,71 @@ public class EinhornPhysic : MonoBehaviour {
     }
   }
 
+  public bool LeftCol
+  {
+    get
+    {
+      Collider2D c = GetComponent<Collider2D>();
+      Vector3 position = c.bounds.min;
+      position.x = c.bounds.min.x - 0.1f;
+      float length = 0.1f - 0.1f;
+      RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.left, length, mask);
+      return grounded.collider != null;
+    }
+  }
+
+  public bool RightCol
+  {
+    get
+    {
+      Collider2D c = GetComponent<Collider2D>();
+      Vector3 position = new Vector2(c.bounds.max.x,c.bounds.min.y);
+      position.x = c.bounds.max.x + 0.1f;
+      float length = 0.1f;
+      RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.right, length, mask);
+      Debug.Log(grounded.collider != null);
+      return grounded.collider != null;
+    }
+  }
+
   public bool IsGrounded
   {
     get
     {
       Vector3 position = transform.position;
-      position.y = GetComponent<Collider2D>().bounds.min.y - 0.1f;
+      Collider2D c = GetComponent<Collider2D>();
+      position.y = c.bounds.min.y - 0.1f;
       float length = 0.1f - 0.1f;
       Debug.DrawRay(position, Vector3.down * length);
-      RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.down, length, mask);
-      if (grounded.collider != null) if (grounded.collider.gameObject.tag == "Candy") return false;
-      return grounded.collider != null;
+      float from  = c.bounds.min.x;
+      float width = c.bounds.max.x - from;
+
+      RaycastHit2D grounded = Physics2D.Raycast(c.bounds.min+new Vector3(0,-0.1f), Vector3.down, length, mask);
+      if (grounded.collider != null)
+      {
+        if (grounded.collider.gameObject.tag != "Candy" &&
+          grounded.collider.gameObject.name != "Player"
+          ) return true;
+      }
+      grounded = Physics2D.Raycast(new Vector3(c.bounds.max.x, c.bounds.min.y-0.1f), Vector3.down, length, mask);
+      if (grounded.collider != null)
+      {
+        if (grounded.collider.gameObject.tag != "Candy" &&
+          grounded.collider.gameObject.name != "Player"
+          ) return true;
+      }
+      grounded = Physics2D.Raycast(new Vector3(c.bounds.center.x, c.bounds.min.y-0.1f), Vector3.down, length, mask);
+      if (grounded.collider != null)
+      {
+        if (grounded.collider.gameObject.tag != "Candy" &&
+          grounded.collider.gameObject.name != "Player"
+          ) return true;
+      }
+
+
+
+      return false;
+
     }
   }
 
