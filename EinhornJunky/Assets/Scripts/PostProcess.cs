@@ -20,7 +20,7 @@ public class PostProcess : MonoBehaviour {
       return;
     }
 
-    Color c = Rainbow(Time.time*((lvl-2.0f))*5);
+    Color c = Rainbow(Time.time*((lvl-2.0f)));
     mat.SetFloat("_Random", Random.value);
     mat.SetFloat("_Red", c.r/255.0f);
     mat.SetFloat("_Green", c.g / 255.0f);
