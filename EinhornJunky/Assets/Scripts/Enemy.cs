@@ -69,13 +69,13 @@ public class Enemy : MonoBehaviour {
     RaycastHit2D left = Physics2D.Raycast(new Vector2(r.bounds.min.x - 2, r.bounds.center.y), new Vector2(0, -1), 3f);
     RaycastHit2D right = Physics2D.Raycast(new Vector2(r.bounds.max.x + 2, r.bounds.center.y), new Vector2(0, -1), 3f);
 
-    if (side.CollideFromLeft ||left.collider == null) {
+    if (side.CollideFromLeft ||(left.collider == null && !WalkOfCliffs)) {
       WalkDirection = Direction.Right;
       foreach(GameObject g in side.colFromLeft)
         if (g.tag == "Player")
           Collide(g);
     }
-    if (side.CollideFromRight || right.collider == null) {
+    if (side.CollideFromRight || (right.collider == null && !WalkOfCliffs)) {
       WalkDirection = Direction.Left;
       foreach (GameObject g in side.colFromLeft)
         if (g.tag == "Player")
