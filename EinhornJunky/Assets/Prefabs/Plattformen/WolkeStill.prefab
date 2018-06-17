@@ -81,7 +81,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1671869836496190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.689182, y: -2.2683392, z: 11.114057}
+  m_LocalPosition: {x: -46.039154, y: 8.277996, z: 11.114057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4017867770487562}
@@ -157,6 +157,8 @@ MonoBehaviour:
   fadeOutTime: 1
   fadedOutTime: 1
   fadeInTime: 1
+  snapBack: 0
+  snapBackModulo: 1.57
 --- !u!212 &212554179457608124
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -192,7 +194,7 @@ SpriteRenderer:
   m_SortingLayerID: 1747496591
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ea6d77e22cb11404190aaf763d498eb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7628e403836049439406e38ce2ee64e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
