@@ -9,4 +9,10 @@ public class Restart : MonoBehaviour {
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
+
+  void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.Return))
+      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+  }
 }
