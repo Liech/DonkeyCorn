@@ -179,7 +179,7 @@ MonoBehaviour:
   OverdriveSpeed: 14
   BounceForce: 20
   SugarRushOnCollision: 0
-  Leiche: {fileID: 0}
+  Leiche: {fileID: 1223141486811330, guid: 859b71faae9b30d43807f9cb97962315, type: 2}
 --- !u!212 &212198424273817166
 SpriteRenderer:
   m_ObjectHideFlags: 1

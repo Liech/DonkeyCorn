@@ -106,17 +106,20 @@ public class Enemy : MonoBehaviour {
   }
 
 
+  float lastCollision;
   public void Collide(GameObject g)
   {
-    if (g.tag == "Player")
+    if (g.tag == "Player" && lastCollision < Time.time + 0.5f)
     {
+      lastCollision = Time.time;
+      SugarLevel sl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>();
       g.GetComponent<Rigidbody2D>().velocity = new Vector3(g.transform.position.x < transform.position.x?-BounceForce: BounceForce, BounceForce);
       g.GetComponent<PlayerController>().Stun();
       if (SugarRushOnCollision)
-        if (GameObject.Find("Canvas/Player").GetComponent<SugarLevel>().CurrentLevel < 2)
-          GameObject.Find("Canvas/Player").GetComponent<SugarLevel>().CurrentLevel = 2.5f;
+        if(sl.CurrentLevel < 2)
+          sl.CurrentLevel = 2.5f;
         else
-          GameObject.Find("Canvas/Player").GetComponent<SugarLevel>().CurrentLevel = 3.5f; //tot
+          sl.CurrentLevel = 3.5f; //tot
 
     }
   }
