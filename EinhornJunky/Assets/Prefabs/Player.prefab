@@ -195,6 +195,12 @@ MonoBehaviour:
   WalkTimeForHighJump: 0.5
   HighJumpFactor: 1.2
   CandyCollectRadius: 0.6
+  OnStunSound: {fileID: 1263250896349016, guid: 788ac52aa0d9d2a4b879d0c614adbfbe,
+    type: 2}
+  OnJumpSound: {fileID: 1263250896349016, guid: 18e997df2cc1a8a4ea7b2f8f2b504a9d,
+    type: 2}
+  OnCandySound: {fileID: 1263250896349016, guid: 1eb80276e9409164b93eb32d7d08beb1,
+    type: 2}
 --- !u!212 &212415915457815768
 SpriteRenderer:
   m_ObjectHideFlags: 1

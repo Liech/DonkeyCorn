@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour {
   public float HighJumpFactor = 1.2f;
   public float CandyCollectRadius = 1;
 
+  public GameObject OnStunSound;
+  public GameObject OnJumpSound;
+  public GameObject OnCandySound;
+
   private float StunnedUntil = 0;
   private float WalkSince = 0;
 
@@ -37,6 +41,8 @@ public class PlayerController : MonoBehaviour {
    
   void CandyCollected(GameObject g)
   {
+
+    Instantiate(OnCandySound).GetComponent<AudioSource>().Play();
     SugarLevel s = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>();
     if (s.CurrentLevel + g.GetComponent<Candy>().SugarBoost > 1 && s.CurrentLevel < 1)
       s.CurrentLevel = 1.5f;
@@ -85,6 +91,8 @@ public class PlayerController : MonoBehaviour {
 
   float getJumpForce()
   {
+
+    Instantiate(OnJumpSound).GetComponent<AudioSource>().Play();
     float factor = 1;
     if (WalkSince != 0 && WalkTimeForHighJump < Time.time- WalkSince)
       factor = HighJumpFactor;
@@ -178,7 +186,7 @@ public class PlayerController : MonoBehaviour {
   {
     if (StunnedUntil > Time.time) return;
     StunnedUntil = Time.time + StunDuration;
-    
+    Instantiate(OnStunSound).GetComponent<AudioSource>().Play();
     //gameObject.AddComponent<ActionEffect>();
     //Debug.Log("Hit");
     //Time.timeScale = 0.00001f;
