@@ -116,7 +116,7 @@ public class Enemy : MonoBehaviour {
   float lastCollision;
   public void Collide(GameObject g)
   {
-    if (g.tag == "Player" && lastCollision < Time.time + 0.5f)
+    if (g.tag == "Player" && lastCollision < Time.time + 0.5f && sugar != SugarStatus.Depri)
     {
       lastCollision = Time.time;
       SugarLevel sl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>();
