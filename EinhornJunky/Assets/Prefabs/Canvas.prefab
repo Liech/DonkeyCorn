@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 224136030481411788}
   - component: {fileID: 222041252154958614}
   - component: {fileID: 114719306397923284}
-  - component: {fileID: 114447660759290676}
+  - component: {fileID: 114265407415380934}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -247,6 +247,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114265407415380934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1335572430842042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fc1d6f6b3a79c41a30e49d9af744e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114351592073400174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,17 +279,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114447660759290676
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1335572430842042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ac4882c29463124a944bf580d67a1fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114632700038474320
 MonoBehaviour:
   m_ObjectHideFlags: 1
