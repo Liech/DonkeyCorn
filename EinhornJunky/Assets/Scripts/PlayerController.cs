@@ -25,6 +25,14 @@ public class PlayerController : MonoBehaviour {
   void Start () {
     Dead = false;
 	}
+
+  public bool Glitch
+  {
+    get
+    {
+      return IsStunned;
+    }
+  }
    
   void CandyCollected(GameObject g)
   {

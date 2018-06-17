@@ -13,6 +13,7 @@ public class PostProcess : MonoBehaviour {
       || GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled)
     {
       mat.SetFloat("_Red", 1);
+      mat.SetFloat("_Random", Random.value);
       mat.SetFloat("_Green", 1);
       mat.SetFloat("_Blue", 1);
       Graphics.Blit(src, dest, mat);
@@ -20,6 +21,7 @@ public class PostProcess : MonoBehaviour {
     }
 
     Color c = Rainbow(Time.time*((lvl-2.0f))*5);
+    mat.SetFloat("_Random", Random.value);
     mat.SetFloat("_Red", c.r/255.0f);
     mat.SetFloat("_Green", c.g / 255.0f);
     mat.SetFloat("_Blue", c.b/255.0f);

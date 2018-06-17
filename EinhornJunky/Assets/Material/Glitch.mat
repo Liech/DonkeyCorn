@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PostProcessing
-  m_Shader: {fileID: 4800000, guid: 30437a48b0737fb489eab07cfba9a0a9, type: 3}
+  m_Name: Glitch
+  m_Shader: {fileID: 4800000, guid: e5ea4a9fa05ac2646a298dd84ae5002d, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
