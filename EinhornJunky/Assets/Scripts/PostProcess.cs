@@ -9,7 +9,7 @@ public class PostProcess : MonoBehaviour {
   void OnRenderImage(RenderTexture src, RenderTexture dest)
   {
     float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().CurrentLevel;
-    if (lvl < 2|| GameObject.Find("Canvas/WinScreen").GetComponent<Image>().enabled
+    if (lvl < 2 || GameObject.Find("Canvas/WinScreen").GetComponent<Image>().enabled
       || GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled)
     {
       mat.SetFloat("_Red", 1);
@@ -19,7 +19,7 @@ public class PostProcess : MonoBehaviour {
       return;
     }
 
-    Color c = Rainbow(Time.time*(lvl-2)*5);
+    Color c = Rainbow(Time.time*((lvl-2.0f))*5);
     mat.SetFloat("_Red", c.r/255.0f);
     mat.SetFloat("_Green", c.g / 255.0f);
     mat.SetFloat("_Blue", c.b/255.0f);
