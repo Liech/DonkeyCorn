@@ -81,6 +81,12 @@ public class Enemy : MonoBehaviour {
         if (g.tag == "Player")
           Collide(g);
     }
+    if (side.CollideFromTop && !KillableByJump)
+    {
+      foreach (GameObject g in side.colFromTop)
+        if (g.tag == "Player")
+          Collide(g);
+    }
     if (side.CollideFromTop && KillableByJump && sugar != SugarStatus.Depri)
     {
       Kill(side.colFromTop);
