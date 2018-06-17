@@ -48,8 +48,9 @@ public class EinhornPhysic : MonoBehaviour {
       position.y = GetComponent<Collider2D>().bounds.min.y - 0.1f;
       float length = 0.1f - 0.1f;
       Debug.DrawRay(position, Vector3.down * length);
-      bool grounded = Physics2D.Raycast(position, Vector3.down, length, mask);
-      return grounded;
+      RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.down, length, mask);
+      if (grounded.collider != null) if (grounded.collider.gameObject.tag == "Candy") return false;
+      return grounded.collider != null;
     }
   }
 

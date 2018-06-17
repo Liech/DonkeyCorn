@@ -13,6 +13,7 @@ public class AudioSuicider : MonoBehaviour {
     initTime = Time.time;
     src = GetComponent<AudioSource>();
     src.clip = sounds[(int)(Random.value * (sounds.Count-1))];
+    src.Play();
 	}
 	
 	// Update is called once per frame

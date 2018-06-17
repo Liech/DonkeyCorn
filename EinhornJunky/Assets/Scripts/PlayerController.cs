@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
   public GameObject OnStunSound;
   public GameObject OnJumpSound;
   public GameObject OnCandySound;
+  public GameObject OnFallSound;
 
   private float StunnedUntil = 0;
   private float WalkSince = 0;
@@ -92,7 +93,6 @@ public class PlayerController : MonoBehaviour {
   float getJumpForce()
   {
 
-    Instantiate(OnJumpSound).GetComponent<AudioSource>().Play();
     float factor = 1;
     if (WalkSince != 0 && WalkTimeForHighJump < Time.time- WalkSince)
       factor = HighJumpFactor;
@@ -132,6 +132,8 @@ public class PlayerController : MonoBehaviour {
     //}
   }
 
+  float lastFump = 0;
+
   public void Movement()
   {
     EinhornPhysic p = gameObject.GetComponent<EinhornPhysic>();
@@ -166,9 +168,15 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.Space) || sugar == SugarStatus.Overdrive)
         {
           p.VY = getJumpForce();
+          if (sugar != SugarStatus.Depri) Instantiate(OnJumpSound).GetComponent<AudioSource>().Play();
         }
         if (Input.GetKey(KeyCode.Space) && sugar == SugarStatus.Depri)
+        {
+          if (lastFump + 0.5f < Time.time)
+            Instantiate(OnFallSound).GetComponent<AudioSource>().Play();
+          lastFump = Time.time;
           transform.GetChild(0).GetComponent<Animator>().SetTrigger("eating");
+        }
       }
     }
     //if (p.VY <= 0)

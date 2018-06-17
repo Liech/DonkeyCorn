@@ -204,6 +204,8 @@ MonoBehaviour:
     type: 2}
   OnCandySound: {fileID: 1263250896349016, guid: 1eb80276e9409164b93eb32d7d08beb1,
     type: 2}
+  OnFallSound: {fileID: 1263250896349016, guid: c71b9a60e4c229747a6fb7e85ce62f7c,
+    type: 2}
 --- !u!212 &212415915457815768
 SpriteRenderer:
   m_ObjectHideFlags: 1
