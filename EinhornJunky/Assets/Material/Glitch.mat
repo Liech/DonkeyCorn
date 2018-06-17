@@ -72,8 +72,8 @@ Material:
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Random: 0.97708094
-    - _Range: 0.03
+    - _Random: 0.565257
+    - _Range: 0
     - _Red: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
