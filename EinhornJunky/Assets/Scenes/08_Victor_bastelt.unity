@@ -11371,6 +11371,16 @@ Prefab:
       propertyPath: orthographic size
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 114704282083001620, guid: 3ac7226a652786f408238033096138f3,
+        type: 2}
+      propertyPath: CanGoBack
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114704282083001620, guid: 3ac7226a652786f408238033096138f3,
+        type: 2}
+      propertyPath: OverdriveSpeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ac7226a652786f408238033096138f3, type: 2}
   m_IsPrefabParent: 0
