@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class AudioSuicider : MonoBehaviour {
+
+  public List<AudioClip> sounds;
 
     float initTime;
     AudioSource src;
 	// Use this for initialization
 	void Start () {
-        initTime = Time.time;
-        src = GetComponent<AudioSource>();
+    initTime = Time.time;
+    src = GetComponent<AudioSource>();
+    src.clip = sounds[(int)(Random.value * (sounds.Count-1))];
 	}
 	
 	// Update is called once per frame

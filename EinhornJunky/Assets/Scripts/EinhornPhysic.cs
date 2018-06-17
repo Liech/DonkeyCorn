@@ -7,8 +7,8 @@ public class EinhornPhysic : MonoBehaviour {
   //public float JumpDuration = 0.3f;
   //public float JumpForce = 0;
 
-  public Vector2 Velocity; 
-
+  public Vector2 Velocity;
+  public LayerMask mask = -1;
   public Rigidbody2D body
   {
     get
@@ -48,7 +48,7 @@ public class EinhornPhysic : MonoBehaviour {
       position.y = GetComponent<Collider2D>().bounds.min.y - 0.1f;
       float length = 0.1f - 0.1f;
       Debug.DrawRay(position, Vector3.down * length);
-      bool grounded = Physics2D.Raycast(position, Vector3.down, length, ~0);
+      bool grounded = Physics2D.Raycast(position, Vector3.down, length, mask);
       return grounded;
     }
   }
