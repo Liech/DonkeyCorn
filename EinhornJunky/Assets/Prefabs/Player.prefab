@@ -192,6 +192,8 @@ MonoBehaviour:
   Overdrive_WalkSpeed: 30
   Overdrive_JumpForce: 60
   StunDuration: 0.5
+  WalkTimeForHighJump: 0.5
+  HighJumpFactor: 1.2
 --- !u!212 &212415915457815768
 SpriteRenderer:
   m_ObjectHideFlags: 1
