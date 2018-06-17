@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour {
   public float BounceForce = 20;
   public bool SugarRushOnCollision;
   public GameObject Leiche;
+  public float OnTopBounceForce = 15;
 
   private Rigidbody2D body;
   private SpriteRenderer rnd;
@@ -98,7 +99,7 @@ public class Enemy : MonoBehaviour {
   {
     foreach (GameObject fg in killer)
       if (fg.tag == "Player")
-        fg.GetComponent<Rigidbody2D>().velocity = new Vector2(fg.GetComponent<Rigidbody2D>().velocity.x, 15);
+        fg.GetComponent<Rigidbody2D>().velocity = new Vector2(fg.GetComponent<Rigidbody2D>().velocity.x, OnTopBounceForce);
     if (Leiche == null) return;
     GameObject g = Instantiate(Leiche);
     g.transform.position = transform.position;
