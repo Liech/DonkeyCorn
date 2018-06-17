@@ -47,7 +47,7 @@ public class EinhornPhysic : MonoBehaviour {
       Collider2D c = GetComponent<Collider2D>();
       Vector3 position = c.bounds.min;
       position.x = c.bounds.min.x - 0.1f;
-      float length = 0.1f - 0.1f;
+      float length = 0;
       RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.left, length, mask);
       return grounded.collider != null;
     }
@@ -60,7 +60,7 @@ public class EinhornPhysic : MonoBehaviour {
       Collider2D c = GetComponent<Collider2D>();
       Vector3 position = new Vector2(c.bounds.max.x,c.bounds.min.y);
       position.x = c.bounds.max.x + 0.1f;
-      float length = 0.1f;
+      float length = 0.0f;
       RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.right, length, mask);
       Debug.Log(grounded.collider != null);
       return grounded.collider != null;
