@@ -62,7 +62,7 @@ public class EinhornPhysic : MonoBehaviour {
       position.x = c.bounds.max.x + 0.1f;
       float length = 0.0f;
       RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.right, length, mask);
-      Debug.Log(grounded.collider != null);
+      //if (grounded.collider != null) if (grounded.collider.gameObject.name == "Player")
       return grounded.collider != null;
     }
   }
