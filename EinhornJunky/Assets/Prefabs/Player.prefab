@@ -164,7 +164,7 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967294
 --- !u!114 &114549132155313582
 MonoBehaviour:
   m_ObjectHideFlags: 1
