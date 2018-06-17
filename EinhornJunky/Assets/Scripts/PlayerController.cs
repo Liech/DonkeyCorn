@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
   public float StunDuration = 0.5f;
   public float WalkTimeForHighJump = 0.5f;
   public float HighJumpFactor = 1.2f;
+  public float CandyCollectRadius = 1;
 
   private float StunnedUntil = 0;
   private float WalkSince = 0;
@@ -104,15 +105,23 @@ public class PlayerController : MonoBehaviour {
     if (sugar == SugarStatus.Depri)
       if (!transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("eating"))
         return;
-      
-    CollisionList l = gameObject.GetComponent<CollisionList>();
-    for(int i = 0;i < l.currentCollisions.Count;i++)
+
+    //Collider2D  Physics2D.OverlapSphere2D(Vector3 position, float radius, int layerMask = AllLayers, QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);
+    Collider2D[] c = Physics2D.OverlapCircleAll(transform.position,CandyCollectRadius );
+    foreach(Collider2D cc in c)
     {
-      if (l.currentCollisions[i].tag == "Candy")
-      {
-        CandyCollected(l.currentCollisions[i]);
-      }
+      if (cc.gameObject.tag == "Candy")
+        CandyCollected(cc.gameObject);
     }
+
+    //CollisionList l = gameObject.GetComponent<CollisionList>();
+    //for(int i = 0;i < l.currentCollisions.Count;i++)
+    //{
+    //  if (l.currentCollisions[i].tag == "Candy")
+    //  {
+    //    CandyCollected(l.currentCollisions[i]);
+    //  }
+    //}
   }
 
   public void Movement()
