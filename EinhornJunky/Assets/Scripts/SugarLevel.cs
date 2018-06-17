@@ -29,6 +29,7 @@ public class SugarLevel : MonoBehaviour {
   public SugarStatus Status
   {
     get{
+      if (GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled) return SugarStatus.Depri;
       if (CurrentLevel < 1) return SugarStatus.Depri;
       if (CurrentLevel > 2) return SugarStatus.Overdrive;
       return SugarStatus.Wach;
