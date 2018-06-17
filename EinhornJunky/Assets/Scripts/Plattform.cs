@@ -75,7 +75,13 @@ public class Plattform : MonoBehaviour {
     {
       plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, snapBack?t: Mathf.Cos(t) * MoveRange);
     }
-    if (FadesOnCollision && col.currentCollisions.Count > 0 && CurrentFadeStatus == FadeOutStatus.Visible)
+    bool hasPlayer = false;
+    foreach (GameObject g in col.currentCollisions)
+      if (g.name == "Player")
+        hasPlayer = true;
+
+
+    if (FadesOnCollision && col.currentCollisions.Count > 0 && CurrentFadeStatus == FadeOutStatus.Visible && hasPlayer)
     {
       NextFadeStatusChange = Time.time + fadeOutTime;
       StatusChangeStart = Time.time;
