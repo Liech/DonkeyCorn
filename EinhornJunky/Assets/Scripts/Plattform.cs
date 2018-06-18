@@ -60,6 +60,7 @@ public class Plattform : MonoBehaviour {
       if (CurrentFadeStatus == FadeOutStatus.Invisible || CurrentFadeStatus == FadeOutStatus.FadeOut||!col.currentCollisions.Contains(g))
       {
         OnCloud.Remove(g);
+        if (g == null) continue;
         g.transform.parent = null;
       }
 

@@ -179,7 +179,8 @@ MonoBehaviour:
   OverdriveSpeed: 14
   BounceForce: 20
   SugarRushOnCollision: 0
-  Leiche: {fileID: 0}
+  Leiche: {fileID: 1223141486811330, guid: 2bf3b11685e61d241a2a2b648cb42fa2, type: 2}
+  OnTopBounceForce: 15
 --- !u!212 &212198424273817166
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -213,7 +214,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 844375141
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300034, guid: 6832cb661fc34ea44a0367a0545a7e9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

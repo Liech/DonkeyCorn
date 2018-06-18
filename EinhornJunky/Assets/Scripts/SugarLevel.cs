@@ -60,7 +60,8 @@ public class SugarLevel : MonoBehaviour {
         GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled = true;
       }
     }
-    GetComponent<ShowLife>().CurrentDamage = CurrentLevel * GetComponent<ShowLife>().MaxLife / 3.0f;
+    GetComponent<ShowLife>().CurrentDamage = CurrentLevel * GetComponent<ShowLife>().MaxLife / 3.0f + 0.5f;
+    if (CurrentLevel <= 0) GetComponent<ShowLife>().CurrentDamage = 0; 
   }
 
   void SetStatus(SugarStatus status)

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PostProcess : MonoBehaviour {
 
   public Material mat;
+  private float time;
   void OnRenderImage(RenderTexture src, RenderTexture dest)
   {
     float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().CurrentLevel;
@@ -19,8 +20,8 @@ public class PostProcess : MonoBehaviour {
       Graphics.Blit(src, dest, mat);
       return;
     }
-
-    Color c = Rainbow(Time.time*((lvl-2.0f)));
+    time += Time.deltaTime * ((lvl - 2.0f)*5);
+    Color c = Rainbow(time);
     mat.SetFloat("_Random", Random.value);
     mat.SetFloat("_Red", c.r/255.0f);
     mat.SetFloat("_Green", c.g / 255.0f);
