@@ -179,6 +179,10 @@ public class PlayerController : MonoBehaviour {
         }
       }
     }
+    if (!p.IsGrounded && sugar != SugarStatus.Depri)
+      transform.GetChild(0).GetComponent<Animator>().SetBool("Jump", true);
+    else
+    transform.GetChild(0).GetComponent<Animator>().SetBool("Jump", false);
     //if (p.VY <= 0)
     //p.VY += -1f;
 

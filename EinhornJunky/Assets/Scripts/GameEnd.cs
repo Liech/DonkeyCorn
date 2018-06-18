@@ -18,6 +18,7 @@ public class GameEnd : MonoBehaviour {
       {
         GameObject.Find("Canvas/WinScreen").GetComponent<Image>().enabled = true;
         won = true;
+        Time.timeScale = 0;
       }
     }
 

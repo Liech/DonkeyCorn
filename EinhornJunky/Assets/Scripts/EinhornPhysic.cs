@@ -48,7 +48,7 @@ public class EinhornPhysic : MonoBehaviour {
       Vector3 position = c.bounds.min;
       position.x = c.bounds.min.x - 0.1f;
       float length = 0;
-      RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.left, length, mask);
+      RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.left, length, mask);      
       return grounded.collider != null;
     }
   }
@@ -90,14 +90,17 @@ public class EinhornPhysic : MonoBehaviour {
       if (grounded.collider != null)
       {
         if (grounded.collider.gameObject.tag != "Candy" &&
-          grounded.collider.gameObject.name != "Player"
+          grounded.collider.gameObject.name != "Player" &&
+          grounded.collider.gameObject.layer != LayerMask.NameToLayer("Corpse")
           ) return true;
       }
       grounded = Physics2D.Raycast(new Vector3(c.bounds.center.x, c.bounds.min.y-0.1f), Vector3.down, length, mask);
       if (grounded.collider != null)
       {
         if (grounded.collider.gameObject.tag != "Candy" &&
-          grounded.collider.gameObject.name != "Player"
+          grounded.collider.gameObject.name != "Player" &&
+          grounded.collider.gameObject.layer != LayerMask.NameToLayer("Corpse")
+
           ) return true;
       }
 
