@@ -12,5 +12,6 @@
 ( ) Leichenbilder müssen skaliert werden
 ( ) BonBons müssen auf eine Größe skaliert werden
 ( ) BackButton in den Credits
-( ) GegnerBounce muss auf einen gemeinsamen Nenner gebracht werden 
+( ) GegnerBounce muss auf einen gemeinsamen Nenner gebracht werden (Ist zeitgleich mit veränderter BonBongröße verändert)
+
 
