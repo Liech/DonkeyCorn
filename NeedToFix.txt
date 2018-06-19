@@ -1,13 +1,16 @@
-Background nach unten erweitern (bzw weiter unten ansetzten, damit er bei Schluchten mit der Kamera schließt)
-Leiste vergrößern
-Rondell Problematik 
-Wolke Bounced nicht automatisch
-GameOverScreen ist nicht Fullscreen (Aufpassen das Buttons dennoch im Vordergrund sind
-Sprunganimation des Einhorns einfügen
-Hauptmenü Buttons sind inGame verschoben
-Die Eselanimation der Leertaste hält zu lange
-Esel verwandelt sich zu spät zu Einhorn
-Buttons fehlt um aus dem Spiel ins Menü zu kommen
-Kollision mit Plattformen führt zum ankleben, wie früher die Wände
-Leichenbilder müssen skaliert werden
-BonBons müssen auf eine Größe skaliert werden
+( ) Background nach unten erweitern (bzw weiter unten ansetzten, damit er bei Schluchten mit der Kamera schließt)
+( ) Leiste vergrößern
+( ) Rondell Problematik 
+( ) Wolke Bounced nicht automatisch
+( ) GameOverScreen ist nicht Fullscreen (Aufpassen das Buttons dennoch im Vordergrund sind
+( ) Sprunganimation des Einhorns einfügen
+( ) Hauptmenü Buttons sind inGame verschoben
+( ) Die Eselanimation der Leertaste hält zu lange
+( ) Esel verwandelt sich zu spät zu Einhorn
+( ) Buttons fehlt um aus dem Spiel ins Menü zu kommen
+( ) Kollision mit Plattformen führt zum ankleben, wie früher die Wände
+( ) Leichenbilder müssen skaliert werden
+( ) BonBons müssen auf eine Größe skaliert werden
+( ) BackButton in den Credits
+( ) GegnerBounce muss auf einen gemeinsamen Nenner gebracht werden 
+
