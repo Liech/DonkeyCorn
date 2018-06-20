@@ -42,7 +42,7 @@ public class Plattform : MonoBehaviour {
     rnd = plt.transform.GetChild(0).GetComponent<SpriteRenderer>();
     CurrentFadeStatus = FadeOutStatus.Visible;
 	}
-	
+  int oldRound = 0;
 	// Update is called once per frame
 	void Update () {
 
@@ -66,13 +66,13 @@ public class Plattform : MonoBehaviour {
 
     float t = Time.time;
 
-    if (snapBack) while (t > snapBackModulo) t -= snapBackModulo;
+    int round = 0;
+    if (snapBack) while (t > snapBackModulo) { t -= snapBackModulo; round++; }
     t *= Speed;
 
     if (MovesRight)
     {
-      float newX = snapBack ? t * MoveRange : Mathf.Cos(t) * MoveRange;
-      if (newX - plt.transform.localPosition.x > 1)
+      if (round != oldRound)
       {
         foreach (GameObject g in OnCloud) g.transform.parent = null;
         OnCloud.Clear();
@@ -82,8 +82,7 @@ public class Plattform : MonoBehaviour {
     }
     if (MovesLeft)
     {
-      float newY = snapBack ? t * MoveRange : Mathf.Cos(t) * MoveRange;
-      if (newY - plt.transform.localPosition.y > 1)
+      if (round != oldRound)
       {
         foreach (GameObject g in OnCloud) g.transform.parent = null;
         OnCloud.Clear();
@@ -91,6 +90,7 @@ public class Plattform : MonoBehaviour {
 
       plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, snapBack?t * MoveRange : Mathf.Cos(t) * MoveRange);
     }
+    oldRound = round;
     bool hasPlayer = false;
     foreach (GameObject g in col.currentCollisions)
       if (g.name == "Player")
