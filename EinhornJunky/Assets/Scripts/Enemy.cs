@@ -98,8 +98,9 @@ public class Enemy : MonoBehaviour {
       foreach (GameObject g in side.colFromRight)
         Collide(g);
     }
-
+    colThisFrame = false;
   }
+  bool colThisFrame;
 
   public void Kill(HashSet<GameObject> killer)
   {
@@ -116,8 +117,9 @@ public class Enemy : MonoBehaviour {
   float lastCollision;
   public void Collide(GameObject g)
   {
-    if (g.tag == "Player" && lastCollision < Time.time + 0.5f && sugar != SugarStatus.Depri)
+    if (g.tag == "Player" && lastCollision < Time.time + 0.5f && sugar != SugarStatus.Depri && !colThisFrame)
     {
+      colThisFrame = true;
       lastCollision = Time.time;
       SugarLevel sl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>();
       g.GetComponent<Rigidbody2D>().velocity = new Vector3(g.transform.position.x < transform.position.x?-BounceForce: BounceForce, BounceForce);

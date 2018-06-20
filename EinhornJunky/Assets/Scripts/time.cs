@@ -22,7 +22,13 @@ public class time : MonoBehaviour {
     t -= seconds;
     int thenthseconds = (int)(t * 100);
 
+    //% angabe
+    float start = GameObject.Find("Start").transform.position.x;
+    float end = GameObject.Find("End").transform.position.x;
+    float plr = GameObject.Find("Player").transform.position.x;
 
-    GetComponent<Text>().text = minutes.ToString() + ":" + seconds + ":" + thenthseconds;
+    float perc = (plr - start) / (end - start);
+
+    GetComponent<Text>().text = ((int)(perc* 100)).ToString() + "%   " + minutes.ToString() + ":" + seconds + ":" + thenthseconds;
 	}
 }

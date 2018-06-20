@@ -64,17 +64,32 @@ public class Plattform : MonoBehaviour {
         g.transform.parent = null;
       }
 
-    float t = Time.time * Speed;
+    float t = Time.time;
 
     if (snapBack) while (t > snapBackModulo) t -= snapBackModulo;
+    t *= Speed;
 
     if (MovesRight)
     {
-      plt.transform.localPosition = new Vector3(Mathf.Sin(t) * MoveRange, snapBack ? t : plt.transform.localPosition.y);
+      float newX = snapBack ? t * MoveRange : Mathf.Cos(t) * MoveRange;
+      if (newX - plt.transform.localPosition.x > 1)
+      {
+        foreach (GameObject g in OnCloud) g.transform.parent = null;
+        OnCloud.Clear();
+      }
+
+      plt.transform.localPosition = new Vector3(Mathf.Sin(t) * MoveRange, snapBack ? t * MoveRange : plt.transform.localPosition.y);
     }
     if (MovesLeft)
     {
-      plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, snapBack?t: Mathf.Cos(t) * MoveRange);
+      float newY = snapBack ? t * MoveRange : Mathf.Cos(t) * MoveRange;
+      if (newY - plt.transform.localPosition.y > 1)
+      {
+        foreach (GameObject g in OnCloud) g.transform.parent = null;
+        OnCloud.Clear();
+      }
+
+      plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, snapBack?t * MoveRange : Mathf.Cos(t) * MoveRange);
     }
     bool hasPlayer = false;
     foreach (GameObject g in col.currentCollisions)

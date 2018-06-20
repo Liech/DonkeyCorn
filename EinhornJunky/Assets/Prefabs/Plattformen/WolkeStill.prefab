@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4587227933355734}
   - component: {fileID: 212554179457608124}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4018712436689694}
   - component: {fileID: 114974212633037338}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WolkeStill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4017867770487562}
   - component: {fileID: 61045703164384804}
   - component: {fileID: 114350473060314810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Moving Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1747496591
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f7628e403836049439406e38ce2ee64e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
