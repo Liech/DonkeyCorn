@@ -11,7 +11,7 @@ LevelDepartment
 ( ) GegnerBounce muss auf einen gemeinsamen Nenner gebracht werden (Ist zeitgleich mit veränderter BonBongröße verändert)
 ( ) Background nach unten erweitern (bzw weiter unten ansetzten, damit er bei Schluchten mit der Kamera schließt)
 ( ) Am Anfang für Leute, die ihre Finger auf die Tasten zum spielen legen, nicht genügend Candy. Bitte am Start mehr BonBons ergänzen
-
+ 		Lösungsansätze: vllt Bonbons hinter den Esel setzen, sodass bei Bedarf zurück gelaufen werden kann?
 
 Done
 (x) Leiste vergrößern
