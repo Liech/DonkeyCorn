@@ -3,7 +3,7 @@ To Do
 ProgrammierDepartment
 (!) BackButton in den Credits (Der alte Button wurde nicht entfernt und schimmert komisch durch x) 
 (!) GameOverScreen ist nicht Fullscreen (Aufpassen das Buttons dennoch im Vordergrund sind
-	 * Ist absicht. Ich finds besser so. Trotzdem ändern? - Yes pls, sieht irgendwie unfertig und schäbig aus xD
+	 * Ist absicht. Ich finds besser so. Trotzdem ändern? - Yes pls, sieht irgendwie unfertig und schäbig aus/Oder mind. Zuckerleiste in den Background
 (!) Prozentangabe hinzugefügt - Bin Blind, finde/sehe sie nicht xD
 
 LevelDepartment
