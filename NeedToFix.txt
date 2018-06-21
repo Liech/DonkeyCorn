@@ -7,7 +7,7 @@
 (x) Buttons fehlt um aus dem Spiel ins Menü zu kommen
 (x) Leichenbilder müssen skaliert werden
 ( ) BonBons müssen auf eine Größe skaliert werden
-(x) BackButton in den Credits
+(!) BackButton in den Credits (Der alte Button wurde nicht entfernt und schimmert komisch durch x) 
 ( ) GegnerBounce muss auf einen gemeinsamen Nenner gebracht werden (Ist zeitgleich mit veränderter BonBongröße verändert)
 (x) Schweine töten niemals wenn man nicht im rausch ist
 (x) Rondell Problematik 
@@ -16,9 +16,7 @@ Niki:
 ( ) Kollision mit Plattformen führt zum ankleben, wie früher die Wände
  * Keine ahnung warum das passiert. Sollte nicht sein, hab den fehler nicht gefunden. 
 ( ) GameOverScreen ist nicht Fullscreen (Aufpassen das Buttons dennoch im Vordergrund sind
- * Ist absicht. Ich finds besser so. Trotzdem ändern?
-( ) Wolke Bounced nicht automatisch 
- * Hab ein paar wolken angepasst, so das es auch ohne fair ist.
+ * Ist absicht. Ich finds besser so. Trotzdem ändern? - Yes pls, siet irgendwie unfertig und schäbig aus xD
 * Prozentangabe hinzugefügt
 * Schwein tötet garantiert nicht mehr ohne überzucker
 
