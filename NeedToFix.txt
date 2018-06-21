@@ -1,4 +1,19 @@
+To Do
+
+ProgrammierDepartment
+(!) BackButton in den Credits (Der alte Button wurde nicht entfernt und schimmert komisch durch x) 
+(!) GameOverScreen ist nicht Fullscreen (Aufpassen das Buttons dennoch im Vordergrund sind
+	 * Ist absicht. Ich finds besser so. Trotzdem ändern? - Yes pls, sieht irgendwie unfertig und schäbig aus xD
+(!) Prozentangabe hinzugefügt - Bin Blind, finde/sehe sie nicht xD
+
+LevelDepartment
+( ) BonBons müssen auf eine Größe skaliert werden
+( ) GegnerBounce muss auf einen gemeinsamen Nenner gebracht werden (Ist zeitgleich mit veränderter BonBongröße verändert)
 ( ) Background nach unten erweitern (bzw weiter unten ansetzten, damit er bei Schluchten mit der Kamera schließt)
+( ) Am Anfang für Leute, die ihre Finger auf die Tasten zum spielen legen, nicht genügend Candy. Bitte am Start mehr BonBons ergänzen
+
+
+Done
 (x) Leiste vergrößern
 (x) Sprunganimation des Einhorns einfügen
 (x) Hauptmenü Buttons sind inGame verschoben
@@ -6,17 +21,7 @@
 (x) Esel verwandelt sich zu spät zu Einhorn
 (x) Buttons fehlt um aus dem Spiel ins Menü zu kommen
 (x) Leichenbilder müssen skaliert werden
-( ) BonBons müssen auf eine Größe skaliert werden
-(!) BackButton in den Credits (Der alte Button wurde nicht entfernt und schimmert komisch durch x) 
-( ) GegnerBounce muss auf einen gemeinsamen Nenner gebracht werden (Ist zeitgleich mit veränderter BonBongröße verändert)
-(x) Schweine töten niemals wenn man nicht im rausch ist
+(x) Schweine töten niemals wenn man nicht im Rausch ist
 (x) Rondell Problematik 
 
-Niki:
-( ) Kollision mit Plattformen führt zum ankleben, wie früher die Wände
- * Keine ahnung warum das passiert. Sollte nicht sein, hab den fehler nicht gefunden. 
-( ) GameOverScreen ist nicht Fullscreen (Aufpassen das Buttons dennoch im Vordergrund sind
- * Ist absicht. Ich finds besser so. Trotzdem ändern? - Yes pls, siet irgendwie unfertig und schäbig aus xD
-* Prozentangabe hinzugefügt
-* Schwein tötet garantiert nicht mehr ohne überzucker
 
