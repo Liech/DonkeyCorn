@@ -5,6 +5,7 @@ ProgrammierDepartment
 (!) GameOverScreen ist nicht Fullscreen (Aufpassen das Buttons dennoch im Vordergrund sind
 	 * Ist absicht. Ich finds besser so. Trotzdem ändern? - Yes pls, sieht irgendwie unfertig und schäbig aus/Oder mind. Zuckerleiste in den Background
 (!) Prozentangabe hinzugefügt - Bin Blind, finde/sehe sie nicht xD
+( ) GameOverBildschirm wird von WinBildschirm überdeckt, wenn Kamera im Tot weiterläuft und zum Ziel kommt
 
 LevelDepartment
 ( ) BonBons müssen auf eine Größe skaliert werden
