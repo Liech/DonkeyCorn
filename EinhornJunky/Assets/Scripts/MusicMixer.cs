@@ -39,15 +39,14 @@ public class MusicMixer : MonoBehaviour {
     AudioSource s = GetComponent<AudioSource>();
     //s.pitch = 0.7f + (lvl / 3.0f);
     float pitch = 0;
-        if (lvl < 1.0f) pitch = 0.8f;
-        else if (lvl < 1.1f) pitch = 0.8f + ((lvl - 1) * 4);
-        else if (lvl < 2.0f) pitch = 1.2f;
-        else if (lvl < 2.1f) pitch = 1.2f + ((lvl - 2)*4);
-        else if (lvl < 2.8f) pitch = 1.6f;
-        else pitch = 1.6f + (lvl - 1.6f);
+    if (lvl < 0.9f) pitch = 0.8f;
+    else if (lvl > 2.5f) pitch = 2.0f + (lvl - 2.5f) * 2;
+    else if (lvl < 1.1f) pitch = 0.8f + (lvl - 0.9f) * 0.5f;
+    else if (lvl < 1.9f) pitch = 1.2f;
+    else if (lvl < 2.1f) pitch = 1.2f + (lvl - 1.9f) * 0.5f;
+    else pitch = 2.0f;
     s.pitch = pitch;
 
 
   }
 }
-      
