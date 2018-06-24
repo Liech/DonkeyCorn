@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4606476604814752}
   - component: {fileID: 212954144286853688}
+  - component: {fileID: 61705451411500250}
   - component: {fileID: 114075847971519862}
   - component: {fileID: 114574474862505564}
-  - component: {fileID: 61927014648267496}
   m_Layer: 10
-  m_Name: LeftBot
+  m_Name: Top_Left
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,14 +36,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202485989208792}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.56, y: -15.72, z: 0}
-  m_LocalScale: {x: 0.952381, y: 0.952381, z: 0.952381}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -137, y: 4.49819, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61927014648267496
+--- !u!61 &61705451411500250
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -54,19 +54,19 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0.2938325, y: -0.00043118}
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.2, y: 4.2}
+    oldSize: {x: 4.0057225, y: 4.0057225}
     newSize: {x: 4.2, y: 4.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.957877, y: 4.20131}
+  m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
 --- !u!114 &114075847971519862
 MonoBehaviour:
@@ -90,9 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb94952bd5fd6c45aac3947e38b62b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Depri: {fileID: 21300000, guid: 2137b82c2127c804690154e97fdf7376, type: 3}
-  Wach: {fileID: 21300000, guid: 7539d42e33b6e4e48a660204d72a51ed, type: 3}
-  Overdrive: {fileID: 21300000, guid: 7539d42e33b6e4e48a660204d72a51ed, type: 3}
+  Depri: {fileID: 21300000, guid: 37f92c4700b958f45bbfdb30d55c4cb4, type: 3}
+  Wach: {fileID: 21300000, guid: 6aebc8cc2e7d3694b8872b1b3a8124a5, type: 3}
+  Overdrive: {fileID: 21300000, guid: 6aebc8cc2e7d3694b8872b1b3a8124a5, type: 3}
 --- !u!212 &212954144286853688
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -126,9 +126,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1747496591
-  m_SortingLayer: 2
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7539d42e33b6e4e48a660204d72a51ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6aebc8cc2e7d3694b8872b1b3a8124a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
