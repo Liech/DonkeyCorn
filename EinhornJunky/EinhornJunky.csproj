@@ -617,6 +617,7 @@
     <Compile Include="Assets\Scripts\GameEnd.cs" />
     <Compile Include="Assets\Scripts\Glitch.cs" />
     <Compile Include="Assets\Scripts\Gray.cs" />
+    <Compile Include="Assets\Scripts\InstantiateOnStart.cs" />
     <Compile Include="Assets\Scripts\MusicMixer.cs" />
     <Compile Include="Assets\Scripts\NoBackCam.cs" />
     <Compile Include="Assets\Scripts\Plattform.cs" />
