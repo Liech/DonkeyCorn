@@ -631,7 +631,7 @@
     <Compile Include="Assets\Scripts\SugarLevel.cs" />
     <Compile Include="Assets\Scripts\SugarLevelDependent.cs" />
     <Compile Include="Assets\Scripts\time.cs" />
-    <Compile Include="Assets\Sound\effects\AudioSuicider.cs" />
+    <Compile Include="Assets\Sound\Effects\AudioSuicider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Material\ColorShader.shader" />
