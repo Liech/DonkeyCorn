@@ -38,8 +38,13 @@ public class SugarLevel : MonoBehaviour {
   public SugarLevel()
   {
     registry = new HashSet<SugarLevelDependent>();
-    CurrentLevel = startSugar;
+    currentLevel = 0.5f;
     changedSinceStart = false;
+  }
+
+  public bool hasEatenOnce()
+  {
+    return changedSinceStart;
   }
 
   public SugarStatus Status

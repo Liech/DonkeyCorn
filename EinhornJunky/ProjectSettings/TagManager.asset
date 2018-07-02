@@ -62,11 +62,11 @@ TagManager:
   - name: Ground0
     uniqueID: 1747496591
     locked: 0
-  - name: CandyParticles
-    uniqueID: 2862817663
-    locked: 0
   - name: Candy
     uniqueID: 3796708291
+    locked: 0
+  - name: CandyParticles
+    uniqueID: 2862817663
     locked: 0
   - name: Enemy
     uniqueID: 844375141
