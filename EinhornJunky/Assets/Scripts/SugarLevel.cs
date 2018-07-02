@@ -12,7 +12,22 @@ public class SugarLevel : MonoBehaviour {
   //0-1 Esel Müde
   //1-2 Esel Wach 
   //2-3 Esel Very Much Overdrive
-  public float CurrentLevel;
+  public float CurrentLevel
+  {
+    get
+    {
+      return currentLevel;
+    }
+    set
+    {
+      currentLevel = value;
+      changedSinceStart = true;
+    }
+  }
+  float currentLevel;
+  bool changedSinceStart = false;
+  public float startSugar;
+
 
   public float Depri_DecreasePerSecond = 0.05f;
   public float Wach_DecreasePerSecond = 0.05f;
@@ -23,7 +38,8 @@ public class SugarLevel : MonoBehaviour {
   public SugarLevel()
   {
     registry = new HashSet<SugarLevelDependent>();
-    CurrentLevel = 0.5f;
+    CurrentLevel = startSugar;
+    changedSinceStart = false;
   }
 
   public SugarStatus Status
@@ -49,9 +65,12 @@ public class SugarLevel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    if (Status == SugarStatus.Depri) { CurrentLevel -= Depri_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Depri); }
-    if (Status == SugarStatus.Wach) { CurrentLevel -= Wach_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Wach); }
-    if (Status == SugarStatus.Overdrive) { CurrentLevel -= Overdrive_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Overdrive); }
+    if (changedSinceStart)
+    {
+      if (Status == SugarStatus.Depri) { CurrentLevel -= Depri_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Depri); }
+      if (Status == SugarStatus.Wach) { CurrentLevel -= Wach_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Wach); }
+      if (Status == SugarStatus.Overdrive) { CurrentLevel -= Overdrive_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Overdrive); }
+    }
     GameObject plr = GameObject.Find("Player");
     if (plr != null)
     {

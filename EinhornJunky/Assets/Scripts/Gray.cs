@@ -10,11 +10,13 @@ public class Gray : MonoBehaviour {
   void OnRenderImage(RenderTexture src, RenderTexture dest)
   {
     float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().CurrentLevel;
-    if (lvl < 1)
+    if (lvl < 1.5f)
     {
-      Range = 1 - (lvl);
+      Range = (1.5f - (lvl)) / 1.5f;
+      Range = Mathf.Pow(Range,0.4f);
     }
-    else Range = 0;
+    else
+      Range = 0;
     mat.SetFloat("_Range", Range);
     mat.SetFloat("_Random", Random.value);
     Graphics.Blit(src, dest, mat);
