@@ -45,11 +45,14 @@ public class EinhornPhysic : MonoBehaviour {
     get
     {
       Collider2D c = GetComponent<Collider2D>();
-      Vector3 position = c.bounds.min;
-      position.x = c.bounds.min.x - 0.1f;
+      Vector2 position1 = new Vector2(c.bounds.min.x - 0.1f, c.bounds.min.y);
+      Vector2 position2 = new Vector2(c.bounds.min.x - 0.1f,c.bounds.max.y);
+      Vector2 position3 = new Vector2(c.bounds.min.x - 0.1f, c.bounds.center.y);
       float length = 0;
-      RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.left, length, mask);      
-      return grounded.collider != null;
+      bool l1 = Physics2D.Raycast(position1, Vector3.left, length, mask).collider != null;
+      bool l2 = Physics2D.Raycast(position2, Vector3.left, length, mask).collider != null;
+      bool l3 = Physics2D.Raycast(position3, Vector3.left, length, mask).collider != null;
+      return l1||l2||l3;
     }
   }
 
@@ -58,12 +61,14 @@ public class EinhornPhysic : MonoBehaviour {
     get
     {
       Collider2D c = GetComponent<Collider2D>();
-      Vector3 position = new Vector2(c.bounds.max.x,c.bounds.min.y);
-      position.x = c.bounds.max.x + 0.1f;
-      float length = 0.0f;
-      RaycastHit2D grounded = Physics2D.Raycast(position, Vector3.right, length, mask);
-      //if (grounded.collider != null) if (grounded.collider.gameObject.name == "Player")
-      return grounded.collider != null;
+      Vector2 position1 = new Vector2(c.bounds.max.x + 0.1f, c.bounds.min.y);
+      Vector2 position2 = new Vector2(c.bounds.max.x + 0.1f, c.bounds.max.y);
+      Vector2 position3 = new Vector2(c.bounds.max.x + 0.1f, c.bounds.center.y);
+      float length = 0;
+      bool l1 = Physics2D.Raycast(position1, Vector3.right, length, mask).collider != null;
+      bool l2 = Physics2D.Raycast(position2, Vector3.right, length, mask).collider != null;
+      bool l3 = Physics2D.Raycast(position3, Vector3.right, length, mask).collider != null;
+      return l1 || l2 || l3;
     }
   }
 

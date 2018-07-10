@@ -13,6 +13,6 @@ public class VanishOnEat : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
     if (GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().hasEatenOnce())
-      GetComponent<Text>().enabled = false;
+      gameObject.SetActive(false);
 	}
 }

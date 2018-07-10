@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour {
     Movement();
     CollectCandy();
 
-
+    transform.GetChild(1).gameObject.SetActive(sugar != SugarStatus.Depri && WalkSince != 0 && WalkTimeForHighJump < Time.time - WalkSince);
   }
 
   float getWalkSpeed()
