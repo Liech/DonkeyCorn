@@ -14,7 +14,7 @@ public class time : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
     if (GameObject.Find("Canvas/WinScreen").GetComponent<Image>().enabled) return;
-    if (GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled) return;
+    if (GameObject.Find("Canvas/LooseScreen")) return;
     float t = Time.time - startTime;
     int minutes = (int)(t / 60.0f);
     t -= minutes * 60;

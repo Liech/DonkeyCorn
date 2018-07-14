@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour {
   public bool SugarRushOnCollision;
   public GameObject Leiche;
   public float OnTopBounceForce = 15;
+  public GameObject OnDieSound;
 
   private Rigidbody2D body;
   private SpriteRenderer rnd;
@@ -104,6 +105,7 @@ public class Enemy : MonoBehaviour {
 
   public void Kill(HashSet<GameObject> killer)
   {
+    Instantiate(OnDieSound).GetComponent<AudioSource>().Play();
     foreach (GameObject fg in killer)
       if (fg.tag == "Player")
         fg.GetComponent<Rigidbody2D>().velocity = new Vector2(fg.GetComponent<Rigidbody2D>().velocity.x, OnTopBounceForce);
@@ -125,10 +127,10 @@ public class Enemy : MonoBehaviour {
       g.GetComponent<Rigidbody2D>().velocity = new Vector3(g.transform.position.x < transform.position.x?-BounceForce: BounceForce, BounceForce);
       g.GetComponent<PlayerController>().Stun();
       if (SugarRushOnCollision)
-        if(sl.CurrentLevel < 2)
+        if (sl.CurrentLevel < 2)
           sl.CurrentLevel = 2.5f;
         else
-          sl.CurrentLevel = 3.5f; //tot
+          GameObject.Find("DeadHandler").GetComponent<DeadHandle>().Dead(DeathReason.Pig);
 
     }
   }

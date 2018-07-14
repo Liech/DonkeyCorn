@@ -181,6 +181,7 @@ MonoBehaviour:
   SugarRushOnCollision: 1
   Leiche: {fileID: 1223141486811330, guid: 859b71faae9b30d43807f9cb97962315, type: 2}
   OnTopBounceForce: 15
+  OnDieSound: {fileID: 1263250896349016, guid: 63be4b78398866144bd469c69a06c679, type: 2}
 --- !u!212 &212229967164778528
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -613,12 +613,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DevCandy.cs" />
     <Compile Include="Assets\Scripts\Candy.cs" />
     <Compile Include="Assets\Scripts\CollisionDelegate.cs" />
     <Compile Include="Assets\Scripts\CollisionList.cs" />
     <Compile Include="Assets\Scripts\CollisionSide.cs" />
     <Compile Include="Assets\Scripts\Corn.cs" />
+    <Compile Include="Assets\Scripts\DeadAnimations\DevCandy.cs" />
+    <Compile Include="Assets\Scripts\DeadAnimations\FallAnimation.cs" />
+    <Compile Include="Assets\Scripts\DeadAnimations\SugarExplodeAnimation.cs" />
+    <Compile Include="Assets\Scripts\DeadAnimations\UICandy.cs" />
+    <Compile Include="Assets\Scripts\DeadAnimations\UICornDead.cs" />
+    <Compile Include="Assets\Scripts\DeadAnimations\UIFall.cs" />
+    <Compile Include="Assets\Scripts\DeadHandle.cs" />
     <Compile Include="Assets\Scripts\EinhornPhysic.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameEnd.cs" />
@@ -630,6 +636,7 @@
     <Compile Include="Assets\Scripts\MusicMixer.cs" />
     <Compile Include="Assets\Scripts\NoBackCam.cs" />
     <Compile Include="Assets\Scripts\NoticeMe.cs" />
+    <Compile Include="Assets\Scripts\Outline.cs" />
     <Compile Include="Assets\Scripts\Plattform.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlaySound.cs" />
@@ -644,6 +651,7 @@
     <Compile Include="Assets\Scripts\SugarLevel.cs" />
     <Compile Include="Assets\Scripts\SugarLevelDependent.cs" />
     <Compile Include="Assets\Scripts\time.cs" />
+    <Compile Include="Assets\Scripts\UIAnimation.cs" />
     <Compile Include="Assets\Scripts\UIParticleSystem.cs" />
     <Compile Include="Assets\Scripts\VanishOnEat.cs" />
     <Compile Include="Assets\Sound\Effects\AudioSuicider.cs" />
@@ -651,7 +659,9 @@
   <ItemGroup>
     <None Include="Assets\Material\ColorShader.shader" />
     <None Include="Assets\Material\DistortionShader.shader" />
+    <None Include="Assets\Material\GeometryExperiment.shader" />
     <None Include="Assets\Material\GrayShader.shader" />
+    <None Include="Assets\Material\Outline.shader" />
     <None Include="C:\Users\Niki\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\Users\Niki\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="C:\Users\Niki\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\Alert.uxml" />

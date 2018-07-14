@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1334502828644426}
+  m_IsPrefabParent: 1
+--- !u!1 &1334502828644426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4184644911831316}
+  - component: {fileID: 114910839650151860}
+  m_Layer: 0
+  m_Name: DeadHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4184644911831316
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334502828644426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -706.0475, y: 14.500163, z: -0.71875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114910839650151860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334502828644426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b026ba4ee93d24440b952c1d6ac40094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilDeathScreen: 2
+  fadeInTime: 2
+  MovingCandy: {fileID: 1311069592681732, guid: f5ee64a0c213afb4eb0e0aa0bc35f885,
+    type: 2}
+  ExplosionSound: {fileID: 1263250896349016, guid: 788ac52aa0d9d2a4b879d0c614adbfbe,
+    type: 2}
+  CandyExplosionVelocity: 70
+  CandyExplosionAngularVelocity: 360

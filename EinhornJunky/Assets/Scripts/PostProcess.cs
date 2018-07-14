@@ -11,7 +11,7 @@ public class PostProcess : MonoBehaviour {
   {
     float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().CurrentLevel;
     if (lvl < 2 || GameObject.Find("Canvas/WinScreen").GetComponent<Image>().enabled
-      || GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled)
+      || GameObject.Find("Canvas/LooseScreen"))
     {
       mat.SetFloat("_Red", 1);
       mat.SetFloat("_Random", Random.value);

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114959377518311864}
   - component: {fileID: 114970498155564392}
   - component: {fileID: 114412034916072552}
+  - component: {fileID: 114701271958683652}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -144,6 +145,18 @@ MonoBehaviour:
   Depri: {fileID: 21300000, guid: 21a56249d6a63f64e8b9963e3062f063, type: 3}
   Wach: {fileID: 21300000, guid: 82fc8bfead6e7dc41aa8583e14f48bfd, type: 3}
   Overdrive: {fileID: 21300000, guid: 82fc8bfead6e7dc41aa8583e14f48bfd, type: 3}
+--- !u!114 &114701271958683652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1555225934789062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf3521bb5549f445a47889a0eedff3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 1334502828644426, guid: 1b7bc5f90980e8e47b0e35c23be6b874, type: 2}
 --- !u!114 &114704282083001620
 MonoBehaviour:
   m_ObjectHideFlags: 1

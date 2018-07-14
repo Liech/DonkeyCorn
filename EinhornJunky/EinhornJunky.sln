@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EinhornJunky", "EinhornJunky.csproj", "{ECCC1EBC-3AC4-0299-48BD-7E74B0DBDB66}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EinhornJunky.Editor", "EinhornJunky.Editor.csproj", "{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EinhornJunky.Editor", "EinhornJunky.Editor.csproj", "{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EinhornJunky.Editor", "EinhornJunky.Editor.csproj", "{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}"
 EndProject
@@ -23,16 +21,11 @@ Global
 		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4F9AAFF-67EF-20CD-F0CC-07D9C733CDA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA74ABAF-DBCC-496D-8F29-5956A650021C}
 	EndGlobalSection
 EndGlobal

@@ -683,7 +683,9 @@
   <ItemGroup>
     <None Include="Assets\Material\ColorShader.shader" />
     <None Include="Assets\Material\DistortionShader.shader" />
+    <None Include="Assets\Material\GeometryExperiment.shader" />
     <None Include="Assets\Material\GrayShader.shader" />
+    <None Include="Assets\Material\Outline.shader" />
     <None Include="C:\Users\Niki\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="C:\Users\Niki\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="C:\Users\Niki\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Templates\Alert.uxml" />

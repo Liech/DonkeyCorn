@@ -52,7 +52,7 @@ public class SugarLevel : MonoBehaviour {
     get{
       if (GameObject.Find("Player") != null)
         if (GameObject.Find("Player").GetComponent<PlayerController>().Glitch) return SugarStatus.Depri;
-      if (GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled)
+      if (GameObject.Find("Canvas/LooseScreen"))
       {
         CurrentLevel = 0;
         return SugarStatus.Depri;
@@ -70,19 +70,27 @@ public class SugarLevel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-    if (changedSinceStart)
+    GameObject plr = GameObject.Find("Player");
+    if (changedSinceStart && !plr.GetComponent<PlayerController>().Dead)
     {
       if (Status == SugarStatus.Depri) { CurrentLevel -= Depri_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Depri); }
       if (Status == SugarStatus.Wach) { CurrentLevel -= Wach_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Wach); }
       if (Status == SugarStatus.Overdrive) { CurrentLevel -= Overdrive_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Overdrive); }
     }
-    GameObject plr = GameObject.Find("Player");
+    if (plr.GetComponent<PlayerController>().Dead)
+    {
+      currentLevel = currentLevel * 0.99f;
+    }
     if (plr != null)
     {
-      if (CurrentLevel < 0 || CurrentLevel > 3|| plr.transform.position.y < GameObject.Find("Abgrund").transform.position.y) {
-        plr.GetComponent<PlayerController>().Dead = true;
-        GameObject.Find("Canvas/LooseScreen").GetComponent<Image>().enabled = true;
-      }
+      DeadHandle deathHandler = GameObject.Find("DeadHandler").GetComponent<DeadHandle>();
+      if (CurrentLevel < 0)
+        deathHandler.Dead(DeathReason.Undersugar);
+      else if (CurrentLevel > 3)
+        deathHandler.Dead(DeathReason.OverSugar);
+      else if (plr.transform.position.y < GameObject.Find("Abgrund").transform.position.y)
+        deathHandler.Dead(DeathReason.Fall);
+      
     }
     GetComponent<ShowLife>().CurrentDamage = CurrentLevel * GetComponent<ShowLife>().MaxLife / 3.0f + 0.5f;
     if (CurrentLevel <= 0) GetComponent<ShowLife>().CurrentDamage = 0; 
