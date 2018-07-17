@@ -1376,7 +1376,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: 
 --- !u!114 &114033517997881012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1639,8 +1639,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e25d23f0ae4726e41ab8271fb1952d9a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1778,7 +1778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57406c5cae349934496077b903b8da24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  falldepth: 170
+  falldepth: 120
   fallSpeed: 2
   waitTimeBeforeReset: 0.5
 --- !u!114 &114217984285612134
@@ -1885,7 +1885,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1894,9 +1894,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 465699ea82cc5504fab556340b09b5be,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 465699ea82cc5504fab556340b09b5be, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 465699ea82cc5504fab556340b09b5be, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2434,7 +2435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b650409cd5093a479c0035cce732f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  falldepth: 200
+  falldepth: 150
   fallSpeed: 4
   maxRotationFrames: 40
   ExplosionFrames: 100
@@ -2450,7 +2451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd7209aff089c24f805f82e305fca25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  falldepth: 300
+  falldepth: 170
   fallSpeed: 2
   waitTimeBeforeReset: 0
 --- !u!114 &114627562627941732
@@ -2518,7 +2519,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: 
 --- !u!114 &114636424189450618
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2538,7 +2539,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300034, guid: 6832cb661fc34ea44a0367a0545a7e9f, type: 3}
+  m_Sprite: {fileID: 21300038, guid: 82a4244ec2fcf9247bec57c7997f37ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2633,8 +2634,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2b55cab260fb0e742b66aa1028f36fe5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2886,7 +2887,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2895,9 +2896,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: ac21eae342850e3409c906ed131e712f,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: ac21eae342850e3409c906ed131e712f, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: ac21eae342850e3409c906ed131e712f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -3392,7 +3394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd7209aff089c24f805f82e305fca25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  falldepth: 200
+  falldepth: 140
   fallSpeed: 2
   waitTimeBeforeReset: 0
 --- !u!222 &222014497827372270
@@ -4249,7 +4251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.32944196, y: 1}
-  m_AnchoredPosition: {x: 32.5, y: 8.97}
+  m_AnchoredPosition: {x: 32.5, y: 8.969971}
   m_SizeDelta: {x: -17.2, y: -431.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224241885240830534
@@ -4643,7 +4645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 70.899994}
+  m_AnchoredPosition: {x: 5, y: 105}
   m_SizeDelta: {x: 279.4, y: 356.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224464263267699280
@@ -4984,7 +4986,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 112.899994}
+  m_AnchoredPosition: {x: 13, y: 112.899994}
   m_SizeDelta: {x: 279.4, y: 356.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224733090212361640

@@ -43,8 +43,8 @@ public class MusicMixer : MonoBehaviour {
         else if (lvl < 1.1f) pitch = 0.8f + ((lvl - 1) * 4);
         else if (lvl < 2.0f) pitch = 1.2f;
         else if (lvl < 2.1f) pitch = 1.2f + ((lvl - 2)*4);
-        else if (lvl < 2.8f) pitch = 1.6f;
-        else pitch = 1.6f + (lvl - 1.6f);
+        else if (lvl < 2.8f) pitch = 1.5f;
+        else pitch = 1.6f + (lvl - 1.5f);
     s.pitch = pitch;
 
 

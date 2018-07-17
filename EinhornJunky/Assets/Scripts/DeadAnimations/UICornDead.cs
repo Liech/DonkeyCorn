@@ -17,7 +17,7 @@ public class UICornDead : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
   {
-    float resolutionFactor = (Screen.height / 1080.0f);
+    float resolutionFactor = 1;
     float dist = (transform.parent.GetChild(2).position - transform.position).magnitude;
     Debug.Log(dist);
     if (dist < deadDist * resolutionFactor)

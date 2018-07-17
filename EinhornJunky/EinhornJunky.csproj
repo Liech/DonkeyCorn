@@ -613,12 +613,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DevCandy.cs" />
     <Compile Include="Assets\Scripts\Candy.cs" />
     <Compile Include="Assets\Scripts\CollisionDelegate.cs" />
     <Compile Include="Assets\Scripts\CollisionList.cs" />
     <Compile Include="Assets\Scripts\CollisionSide.cs" />
     <Compile Include="Assets\Scripts\Corn.cs" />
-    <Compile Include="Assets\Scripts\DeadAnimations\DevCandy.cs" />
     <Compile Include="Assets\Scripts\DeadAnimations\FallAnimation.cs" />
     <Compile Include="Assets\Scripts\DeadAnimations\SugarExplodeAnimation.cs" />
     <Compile Include="Assets\Scripts\DeadAnimations\UICandy.cs" />
