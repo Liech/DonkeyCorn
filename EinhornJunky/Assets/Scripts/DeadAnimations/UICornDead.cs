@@ -19,7 +19,6 @@ public class UICornDead : MonoBehaviour {
   {
     float resolutionFactor = 1;
     float dist = (transform.parent.GetChild(2).position - transform.position).magnitude;
-    Debug.Log(dist);
     if (dist < deadDist * resolutionFactor)
       GetComponent<Image>().sprite = Dead;
     else

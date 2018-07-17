@@ -210,8 +210,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 102.099, y: 32.49951}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 290.1, y: 67.7}
+  m_SizeDelta: {x: 536.1, y: 100.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &946511636
 MonoBehaviour:
@@ -224,6 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0476faed4e7635e46b7964f90e7abdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 1410651272688064, guid: 293072aac1daa6b4e8c6a12e67b70a2f,
+    type: 2}
   sceneName: MainMenu
 --- !u!114 &946511637
 MonoBehaviour:
@@ -343,8 +345,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0010070801, y: 0.00048828125}
-  m_SizeDelta: {x: -482, y: -273}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0.000015258789}
+  m_SizeDelta: {x: 0.00012207, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294294951
 MonoBehaviour:

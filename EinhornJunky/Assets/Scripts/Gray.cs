@@ -9,7 +9,7 @@ public class Gray : MonoBehaviour {
   public float Range = 0.02f;
   void OnRenderImage(RenderTexture src, RenderTexture dest)
   {
-    float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().CurrentLevel;
+    float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().effectLevel;
     if (lvl < 1.5f)
     {
       Range = (1.5f - (lvl)) / 1.5f;

@@ -45,13 +45,7 @@ public class PlayerController : MonoBehaviour {
 
     Instantiate(OnCandySound).GetComponent<AudioSource>().Play();
     SugarLevel s = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>();
-    if (s.CurrentLevel + g.GetComponent<Candy>().SugarBoost > 1 && s.CurrentLevel < 1)
-      s.CurrentLevel = 1.5f;
-    else
-    if (s.CurrentLevel + g.GetComponent<Candy>().SugarBoost > 2 && s.CurrentLevel < 2)
-      s.CurrentLevel = 2.5f;
-    else
-    s.CurrentLevel += g.GetComponent<Candy>().SugarBoost;
+    s.addSugar(g.GetComponent<Candy>().SugarBoost);
 
 
     Destroy(g);

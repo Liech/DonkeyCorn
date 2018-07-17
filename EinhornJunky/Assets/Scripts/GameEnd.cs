@@ -16,12 +16,13 @@ public class GameEnd : MonoBehaviour {
       if (Player == null) return;
       if (Player.transform.position.x > transform.position.x)
       {
-        GameObject.Find("Canvas/WinScreen").GetComponent<Image>().enabled = true;
+        GameObject looseScreen = GameObject.Find("Canvas");
+        foreach (Transform x in looseScreen.transform)
+          if (x.name == "WinScreen") looseScreen = x.gameObject;
+        looseScreen.SetActive(true);
         won = true;
         Time.timeScale = 0;
       }
     }
-
-    if (won) Debug.Log("Sieg");
   }
 }

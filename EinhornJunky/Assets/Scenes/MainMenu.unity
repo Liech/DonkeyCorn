@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0476faed4e7635e46b7964f90e7abdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 1410651272688064, guid: 293072aac1daa6b4e8c6a12e67b70a2f,
+    type: 2}
   sceneName: Level1
 --- !u!114 &546738332
 MonoBehaviour:
@@ -626,6 +628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0476faed4e7635e46b7964f90e7abdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 1410651272688064, guid: 293072aac1daa6b4e8c6a12e67b70a2f,
+    type: 2}
   sceneName: Credits
 --- !u!1 &966420449
 GameObject:

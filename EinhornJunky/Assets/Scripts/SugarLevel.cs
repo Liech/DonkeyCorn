@@ -16,15 +16,36 @@ public class SugarLevel : MonoBehaviour {
   {
     get
     {
-      return currentLevel;
+      return targetLevel;
     }
     set
     {
-      currentLevel = value;
-      changedSinceStart = true;
+      targetLevel = value;
     }
   }
-  float currentLevel;
+
+  public float effectLevel
+  {
+    get
+    {
+      return currentLevel;
+    }
+  }
+
+  public void addSugar(float amount)
+  {
+    changedSinceStart = true;
+    if (targetLevel + amount > 1 && targetLevel < 1)
+      targetLevel = 1.5f;
+    else
+    if (targetLevel + amount > 2 && targetLevel < 2)
+      targetLevel = 2.5f;
+    else
+      targetLevel += amount;
+  }
+
+  public float targetLevel;
+  public float currentLevel;
   bool changedSinceStart = false;
   public float startSugar;
 
@@ -39,6 +60,7 @@ public class SugarLevel : MonoBehaviour {
   {
     registry = new HashSet<SugarLevelDependent>();
     currentLevel = 0.5f;
+    targetLevel = currentLevel;
     changedSinceStart = false;
   }
 
@@ -54,7 +76,7 @@ public class SugarLevel : MonoBehaviour {
         if (GameObject.Find("Player").GetComponent<PlayerController>().Glitch) return SugarStatus.Depri;
       if (GameObject.Find("Canvas/LooseScreen"))
       {
-        CurrentLevel = 0;
+        targetLevel = 0;
         return SugarStatus.Depri;
       }
       if (CurrentLevel < 1) return SugarStatus.Depri;
@@ -69,17 +91,23 @@ public class SugarLevel : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+    float maxSpeed = 0.015f;
+    float dir = (targetLevel - currentLevel);
+    if (dir > maxSpeed) dir = maxSpeed;
+    if (dir < -maxSpeed) dir =- maxSpeed;
+    currentLevel = targetLevel;// currentLevel +  dir;
+
     GameObject plr = GameObject.Find("Player");
     if (changedSinceStart && !plr.GetComponent<PlayerController>().Dead)
     {
-      if (Status == SugarStatus.Depri) { CurrentLevel -= Depri_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Depri); }
-      if (Status == SugarStatus.Wach) { CurrentLevel -= Wach_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Wach); }
-      if (Status == SugarStatus.Overdrive) { CurrentLevel -= Overdrive_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Overdrive); }
+      if (Status == SugarStatus.Depri) { targetLevel -= Depri_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Depri); }
+      if (Status == SugarStatus.Wach) { targetLevel -= Wach_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Wach); }
+      if (Status == SugarStatus.Overdrive) { targetLevel -= Overdrive_DecreasePerSecond * Time.deltaTime; SetStatus(SugarStatus.Overdrive); }
     }
     if (plr.GetComponent<PlayerController>().Dead)
     {
-      currentLevel = currentLevel * 0.99f;
+      targetLevel = targetLevel * 0.99f;
     }
     if (plr != null)
     {

@@ -9,8 +9,8 @@ public class PostProcess : MonoBehaviour {
   private float time;
   void OnRenderImage(RenderTexture src, RenderTexture dest)
   {
-    float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().CurrentLevel;
-    if (lvl < 2 || GameObject.Find("Canvas/WinScreen").GetComponent<Image>().enabled
+    float lvl = GameObject.Find("Canvas/SugarLevel").GetComponent<SugarLevel>().effectLevel;
+    if (lvl < 2 || GameObject.Find("Canvas/WinScreen")
       || GameObject.Find("Canvas/LooseScreen"))
     {
       mat.SetFloat("_Red", 1);

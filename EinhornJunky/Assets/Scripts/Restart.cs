@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour {
 
-	public void RestartGame()
+  public GameObject loadingScreen;
+  public void RestartGame()
   {
+    if (loadingScreen != null) Instantiate(loadingScreen, GameObject.Find("Canvas").transform);
     Time.timeScale = 1;
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
   }
@@ -14,6 +16,9 @@ public class Restart : MonoBehaviour {
   void Update()
   {
     if (Input.GetKeyDown(KeyCode.Return))
+    {
+      if (loadingScreen != null) Instantiate(loadingScreen, GameObject.Find("Canvas").transform);
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
   }
 }

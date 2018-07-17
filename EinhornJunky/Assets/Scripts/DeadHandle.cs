@@ -85,7 +85,9 @@ public class DeadHandle : MonoBehaviour {
         plr.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         Instantiate(ExplosionSound).GetComponent<AudioSource>().Play();
       }
-    }
+      plr.GetComponent<PlayerController>().Stun();
+    }else if (reason == DeathReason.CandyCorn)
+      plr.GetComponent<PlayerController>().Stun();
 
   }
 }

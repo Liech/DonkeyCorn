@@ -7,10 +7,10 @@ public class score
 {
   public string name;
   public float percentage;
-  public int time;
+  public float time;
 
   public score() { }
-  public score(string name, float percentage, int time)
+  public score(string name, float percentage, float time)
   {
     this.name = name;
     this.percentage = percentage;
@@ -21,14 +21,23 @@ public class score
 public class Highscore {
   static string path;
   private List<score> Scores;
-  public static Highscore Instance { get; set; }
+
+  private static Highscore _instance;
+  public static Highscore Instance
+  {
+    get
+    {
+      if (_instance == null) _instance = new Highscore();
+      return _instance;
+    }
+  }
 
 	// Use this for initialization
 	private Highscore() {
     path = Application.persistentDataPath + "Highscore";
     if (!File.Exists(path))
     {
-      FileStream f = new FileStream(path,FileMode.CreateNew);
+      FileStream f = new FileStream(path,FileMode.OpenOrCreate);
       BinaryWriter bw = new BinaryWriter(f);
       int numberOfScores = 0;
       bw.Write(numberOfScores);
@@ -48,8 +57,9 @@ public class Highscore {
         {
           name = br.ReadString(),
           percentage = br.ReadSingle(),
-          time = br.ReadInt32()          
-        };       
+          time = br.ReadSingle()          
+        };
+        Scores.Add(s);
       }
       f.Close();
     }
@@ -60,9 +70,9 @@ public class Highscore {
     public int Compare(score x, score y)
     {
       if (x.percentage == y.percentage || (x.percentage > 0.99 && y.percentage > 0.99))
-        return x.time.CompareTo(y.time);
+        return y.time.CompareTo(x.time);
       else
-        return x.percentage.CompareTo(y.percentage);
+        return y.percentage.CompareTo(x.percentage);
     }
   }
 
@@ -73,7 +83,7 @@ public class Highscore {
 
   void writeOut()
   {
-    FileStream f = new FileStream(path, FileMode.CreateNew);
+    FileStream f = new FileStream(path, FileMode.OpenOrCreate);
     BinaryWriter bw = new BinaryWriter(f);
     bw.Write(Scores.Count);
     for(int i = 0;i < Scores.Count; i++)
@@ -94,7 +104,8 @@ public class Highscore {
   {
     Scores.Add(s);
     sortScore();
-    Scores = Scores.GetRange(0, 9);
+    if (Scores.Count > 10)
+      Scores = Scores.GetRange(0, 9);
     writeOut();
   }  
 }
