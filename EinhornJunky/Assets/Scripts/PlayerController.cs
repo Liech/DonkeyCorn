@@ -103,9 +103,10 @@ public class PlayerController : MonoBehaviour {
 
   public void CollectCandy()
   {
+    AnimatorStateInfo state = transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
     SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
     if (sugar == SugarStatus.Depri)
-      if (!transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("eating"))
+      if (!state.IsName("eating"))
         return;
 
     //Collider2D  Physics2D.OverlapSphere2D(Vector3 position, float radius, int layerMask = AllLayers, QueryTriggerInteraction queryTriggerInteraction = QueryTriggerInteraction.UseGlobal);
@@ -113,7 +114,10 @@ public class PlayerController : MonoBehaviour {
     foreach(Collider2D cc in c)
     {
       if (cc.gameObject.tag == "Candy")
+      {
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("StopEating");
         CandyCollected(cc.gameObject);
+      }
     }
 
     //CollisionList l = gameObject.GetComponent<CollisionList>();
@@ -128,23 +132,47 @@ public class PlayerController : MonoBehaviour {
 
   float lastFump = 0;
 
+  enum walkdir { l, r, n };
   public void Movement()
   {
-    EinhornPhysic p = gameObject.GetComponent<EinhornPhysic>();
+    walkdir currentWalkDir = walkdir.n;
+    bool wantjump = false;
+    foreach (Touch touch in Input.touches)
+    {
+      if (touch.position.y > Screen.height - Screen.height / 6) continue;
+      if (touch.position.y > (Screen.height) / 3.0f)
+      { 
+        if (touch.position.x < Screen.width / 2)
+        {
+          currentWalkDir = walkdir.l;
+        }
+        else
+        {
+          currentWalkDir = walkdir.r;
+        }
+      }
+      else
+      {
+        wantjump = true;
+      }
+    }
+
+
+      EinhornPhysic p = gameObject.GetComponent<EinhornPhysic>();
     Vector2 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
     SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
 
     if (!IsStunned)
     {
-      if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && !p.LeftCol)
+      if ((currentWalkDir == walkdir.l||Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && !p.LeftCol)
       {
         transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
         p.VX = -getWalkSpeed();
         transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
         if (WalkSince == 0) WalkSince = Time.time;
       }
-      else if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && !p.RightCol)
+      else if ((currentWalkDir == walkdir.r|| Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && !p.RightCol)
       {
         transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 1);
         p.VX = getWalkSpeed();
@@ -157,21 +185,8 @@ public class PlayerController : MonoBehaviour {
         transform.GetChild(0).GetComponent<Animator>().SetFloat("Speed", 0);
         WalkSince = 0;
       }
-      if (p.IsGrounded)
-      {
-        if (Input.GetKey(KeyCode.Space) || sugar == SugarStatus.Overdrive)
-        {
-          p.VY = getJumpForce();
-          if (sugar != SugarStatus.Depri) Instantiate(OnJumpSound).GetComponent<AudioSource>().Play();
-        }
-        if (Input.GetKey(KeyCode.Space) && sugar == SugarStatus.Depri)
-        {
-          if (lastFump + 0.5f < Time.time)
-            Instantiate(OnFallSound).GetComponent<AudioSource>().Play();
-          lastFump = Time.time;
-          transform.GetChild(0).GetComponent<Animator>().SetTrigger("eating");
-        }
-      }
+      if (Input.GetKey(KeyCode.Space) || sugar == SugarStatus.Overdrive || wantjump)
+        Jump();
     }
     if (!p.IsGrounded && sugar != SugarStatus.Depri)
       transform.GetChild(0).GetComponent<Animator>().SetBool("Jump", true);
@@ -180,6 +195,27 @@ public class PlayerController : MonoBehaviour {
     //if (p.VY <= 0)
     //p.VY += -1f;
 
+  }
+
+
+
+  public void Jump()
+  {
+    EinhornPhysic p = gameObject.GetComponent<EinhornPhysic>();
+    Vector2 move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+    SugarStatus sugar = GetComponent<SugarLevelDependent>().CurrentLevel;
+    if (p.IsGrounded)
+    {
+      p.VY = getJumpForce();
+      if (sugar != SugarStatus.Depri) Instantiate(OnJumpSound).GetComponent<AudioSource>().Play();
+      if (sugar == SugarStatus.Depri)
+      {
+        if (lastFump + 0.5f < Time.time)
+          Instantiate(OnFallSound).GetComponent<AudioSource>().Play();
+        lastFump = Time.time;
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("eating");
+      }
+    }
   }
 
   public bool IsStunned

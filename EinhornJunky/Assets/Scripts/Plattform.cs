@@ -44,26 +44,27 @@ public class Plattform : MonoBehaviour {
 	}
   int oldRound = 0;
 	// Update is called once per frame
-	void Update () {
-
-    if (CurrentFadeStatus == FadeOutStatus.Visible || CurrentFadeStatus == FadeOutStatus.FadeOut)
-    foreach (GameObject g in col.currentCollisions)
+	void FixedUpdate () {
+    if (col != null)
     {
-        if (g.GetComponent<Rigidbody2D>() == null) return;
-        g.transform.parent = plt.transform;
-        OnCloud.Add(g);
+      if (CurrentFadeStatus == FadeOutStatus.Visible || CurrentFadeStatus == FadeOutStatus.FadeOut)
+        foreach (GameObject g in col.currentCollisions)
+        {
+          if (g.GetComponent<Rigidbody2D>() == null) return;
+          g.transform.parent = plt.transform;
+          OnCloud.Add(g);
+        }
+
+
+      HashSet<GameObject> copy_OnCLoud = new HashSet<GameObject>(OnCloud);
+      foreach (GameObject g in copy_OnCLoud)
+        if (CurrentFadeStatus == FadeOutStatus.Invisible || CurrentFadeStatus == FadeOutStatus.FadeOut || !col.currentCollisions.Contains(g))
+        {
+          OnCloud.Remove(g);
+          if (g == null) continue;
+          g.transform.parent = null;
+        }
     }
-
-
-    HashSet<GameObject> copy_OnCLoud = new HashSet<GameObject>(OnCloud);
-    foreach(GameObject g in copy_OnCLoud)
-      if (CurrentFadeStatus == FadeOutStatus.Invisible || CurrentFadeStatus == FadeOutStatus.FadeOut||!col.currentCollisions.Contains(g))
-      {
-        OnCloud.Remove(g);
-        if (g == null) continue;
-        g.transform.parent = null;
-      }
-
     float t = Time.time;
 
     int round = 0;
@@ -90,61 +91,67 @@ public class Plattform : MonoBehaviour {
 
       plt.transform.localPosition = new Vector3(plt.transform.localPosition.x, snapBack?t * MoveRange : Mathf.Cos(t) * MoveRange);
     }
+    if (col != null)
+    {
     oldRound = round;
     bool hasPlayer = false;
     foreach (GameObject g in col.currentCollisions)
       if (g.name == "Player")
         hasPlayer = true;
 
+      if (FadesOnCollision && col.currentCollisions.Count > 0 && CurrentFadeStatus == FadeOutStatus.Visible && hasPlayer)
+      {
+        NextFadeStatusChange = Time.time + fadeOutTime;
+        StatusChangeStart = Time.time;
+        CurrentFadeStatus = FadeOutStatus.FadeOut;
+        return;
+      }
+      else
 
-    if (FadesOnCollision && col.currentCollisions.Count > 0 && CurrentFadeStatus == FadeOutStatus.Visible && hasPlayer)
-    {
-      NextFadeStatusChange = Time.time + fadeOutTime;
-      StatusChangeStart = Time.time;
-      CurrentFadeStatus = FadeOutStatus.FadeOut;
-      return;
-    }else
-    
     if (CurrentFadeStatus == FadeOutStatus.FadeOut)
-    {
-      float range = NextFadeStatusChange - StatusChangeStart;
-      float current = Time.time - StatusChangeStart;
-      float perc = current / range;
-      if (perc > 1) perc = 1;
-      rnd.color = new Color(1,1,1,1- perc);      
-      if (current > range)
       {
-        CurrentFadeStatus = FadeOutStatus.Invisible;
-        StatusChangeStart = Time.time;
-        NextFadeStatusChange = Time.time + fadedOutTime;
+        float range = NextFadeStatusChange - StatusChangeStart;
+        float current = Time.time - StatusChangeStart;
+        float perc = current / range;
+        if (perc > 1) perc = 1;
+        rnd.color = new Color(1, 1, 1, 1 - perc);
+        if (current > range)
+        {
+          CurrentFadeStatus = FadeOutStatus.Invisible;
+          StatusChangeStart = Time.time;
+          NextFadeStatusChange = Time.time + fadedOutTime;
+        }
       }
-    }else
+      else
     if (CurrentFadeStatus == FadeOutStatus.Invisible)
-    {
-      rnd.color = new Color(1, 1, 1, 0);
-      plt.GetComponent<BoxCollider2D>().enabled = false;
-      if (Time.time > NextFadeStatusChange)
       {
-        CurrentFadeStatus = FadeOutStatus.FadeIn;
-        StatusChangeStart = Time.time;
-        NextFadeStatusChange = Time.time + fadeInTime;
+        rnd.color = new Color(1, 1, 1, 0);
+        plt.GetComponent<BoxCollider2D>().enabled = false;
+        if (Time.time > NextFadeStatusChange)
+        {
+          CurrentFadeStatus = FadeOutStatus.FadeIn;
+          StatusChangeStart = Time.time;
+          NextFadeStatusChange = Time.time + fadeInTime;
+        }
       }
-    }else
+      else
     if (CurrentFadeStatus == FadeOutStatus.FadeIn)
-    {
-      plt.GetComponent<BoxCollider2D>().enabled = true;
-      float range = NextFadeStatusChange - StatusChangeStart;
-      float current = Time.time - StatusChangeStart;
-      rnd.color = new Color(1, 1, 1, current / range);
-      if (current > range)
       {
-        CurrentFadeStatus = FadeOutStatus.Visible;
-        StatusChangeStart = 0;
-        NextFadeStatusChange = 0;
+        plt.GetComponent<BoxCollider2D>().enabled = true;
+        float range = NextFadeStatusChange - StatusChangeStart;
+        float current = Time.time - StatusChangeStart;
+        rnd.color = new Color(1, 1, 1, current / range);
+        if (current > range)
+        {
+          CurrentFadeStatus = FadeOutStatus.Visible;
+          StatusChangeStart = 0;
+          NextFadeStatusChange = 0;
+        }
       }
-    }else
-    {
-      rnd.color = new Color(1, 1, 1, 1);
+      else
+      {
+        rnd.color = new Color(1, 1, 1, 1);
+      }
     }
   }
 }

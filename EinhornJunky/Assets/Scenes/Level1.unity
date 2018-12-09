@@ -7553,7 +7553,7 @@ GameObject:
   - component: {fileID: 486915463}
   - component: {fileID: 486915462}
   - component: {fileID: 486915461}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Physic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
