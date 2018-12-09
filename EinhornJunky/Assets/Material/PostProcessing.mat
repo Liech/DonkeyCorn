@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: PostProcessing
   m_Shader: {fileID: 4800000, guid: 30437a48b0737fb489eab07cfba9a0a9, type: 3}
@@ -72,7 +72,7 @@ Material:
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Random: 0.3557079
+    - _Random: 0.70651764
     - _Range: 0.03
     - _Red: 1
     - _SmoothnessTextureChannel: 0

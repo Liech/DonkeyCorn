@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Gray
   m_Shader: {fileID: 4800000, guid: b49e56e73c5a0e14ea9049a02c3cae9c, type: 3}
@@ -72,7 +72,7 @@ Material:
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Random: 0.7869817
+    - _Random: 0.79354024
     - _Range: 0.850283
     - _Red: 1
     - _SmoothnessTextureChannel: 0
