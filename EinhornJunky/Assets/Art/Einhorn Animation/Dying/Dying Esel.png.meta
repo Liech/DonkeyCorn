@@ -1,13 +1,21 @@
 fileFormatVersion: 2
 guid: f9157a1f61cf0e64ea7ce976c3c44ce2
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Dying Esel_0
-    21300002: Dying Esel_1
-    21300004: Dying Esel_2
-    21300006: Dying Esel_3
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Dying Esel_0
+  - first:
+      213: 21300002
+    second: Dying Esel_1
+  - first:
+      213: 21300004
+    second: Dying Esel_2
+  - first:
+      213: 21300006
+    second: Dying Esel_3
   externalObjects: {}
-  serializedVersion: 5
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -25,6 +33,9 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,9 +44,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -56,11 +67,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -71,7 +86,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -82,6 +98,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -101,6 +118,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 03c58738f22b35b46b34ef8d06726673
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -121,6 +139,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9c3465a8b7ca34e40a5f7e3cd38f4aca
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -141,6 +160,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3d373fa38c9b29e4eac04829dc9b36e7
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -149,11 +169,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 832d39835e9eccb4bbc073f6bedda1e7
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
