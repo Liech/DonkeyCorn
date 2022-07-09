@@ -7,6 +7,10 @@ A Platformer about sad donkeys and addiction.
 
 Warning: Might be a little bit too colorful for some audiences
 
+# Play it in the Browser
+
+https://peinliech.itch.io/donkeycorn
+
 # History
 
 Developed with a team of 14 people at the Summer Game Jam Mainz 2016 in the Hochschule Mainz.
