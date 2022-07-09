@@ -14,3 +14,7 @@ Developed with a team of 14 people at the Summer Game Jam Mainz 2016 in the Hoch
 Afterwards it was polished and extended for a small gamescom pitch.
 
 Migrated from an old SVN Backup
+
+# Credits
+
+https://github.com/Liech/DonkeyCorn/blob/master/EinhornJunky/Assets/Art/Credits.jpg
