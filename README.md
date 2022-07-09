@@ -1,3 +1,6 @@
+![poster_gamejam](https://user-images.githubusercontent.com/16963076/178115398-f9601ce7-1273-4920-b77b-430e2a742f81.png)
+
+
 # DonkeyCorn
 
 A Platformer about sad donkeys and addiction.
